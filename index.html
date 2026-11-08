@@ -468,7 +468,7 @@ async function getCachedRaceWeather(track){
  const cached=raceCardWeatherCache.get(track);
  if(cached&&Date.now()-cached.at<10*60*1000)return cached.data;
  if(raceCardWeatherPending.has(track))return raceCardWeatherPending.get(track);
- const endpoint='https://api.open-meteo.com/v1/forecast?latitude='+coord[2]+'&longitude='+coord[3]+'&current=temperature_2m,apparent_temperature,relative_humidity_2m,weather_code,wind_speed_10m,wind_direction_10m&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,wind_speed_10m_max&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=auto&forecast_days=16';
+ const endpoint='https://api.open-meteo.com/v1/forecast?latitude='+coord[2]+'&longitude='+coord[3]+'&current=temperature_2m,apparent_temperature,relative_humidity_2m,weather_code,wind_speed_10m,wind_direction_10m&daily=weather_code,temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,precipitation_probability_max,wind_speed_10m_max,wind_direction_10m_dominant&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=auto&forecast_days=16';
  const pending=fetch(endpoint,{cache:'no-store'}).then(response=>{if(!response.ok)throw Error('Weather unavailable');return response.json()}).then(data=>{raceCardWeatherCache.set(track,{at:Date.now(),data});return data}).finally(()=>{raceCardWeatherPending.delete(track)});
  raceCardWeatherPending.set(track,pending);
  return pending;
@@ -484,13 +484,13 @@ async function fillRaceWeather(card,r){
   const data=await getCachedRaceWeather(r.track);if(!card.isConnected)return;
   const c=data.current||{},d=data.daily||{},index=(d.time||[]).indexOf(r.date);
   let html='';
-  if(days===0){
+  if(days>=0){
     html='<div class="weather-heading">'+weatherLabel(c.weather_code)+' · Current track-area conditions</div>'+
     '<div class="weather-metrics"><span>🌡️ Now <b>'+weatherMetric(c.temperature_2m,'°F')+'</b></span><span>🥵 Feels like <b>'+weatherMetric(c.apparent_temperature,'°F')+'</b></span><span>💨 Wind <b>'+weatherMetric(c.wind_speed_10m,' mph')+' '+(c.wind_direction_10m==null?'':cardinal(c.wind_direction_10m))+'</b></span><span>💧 Humidity <b>'+weatherMetric(c.relative_humidity_2m,'%')+'</b></span></div>';
   }
   if(index>=0){
     html+='<div class="weather-heading">'+(days===0?'Race-day outlook':'🌦️ Race-day forecast · '+pretty(r.date))+'</div>'+
-    '<div class="weather-metrics"><span>🌡️ High / low <b>'+weatherMetric(d.temperature_2m_max[index],'°')+' / '+weatherMetric(d.temperature_2m_min[index],'°F')+'</b></span><span>🌧️ Rain chance <b>'+weatherMetric(d.precipitation_probability_max[index],'%')+'</b></span><span>💨 Max wind <b>'+weatherMetric(d.wind_speed_10m_max[index],' mph')+'</b></span><span>🌤️ '+weatherLabel(d.weather_code[index])+'</span></div>';
+    '<div class="weather-metrics"><span>🌡️ High / low <b>'+weatherMetric(d.temperature_2m_max[index],'°')+' / '+weatherMetric(d.temperature_2m_min[index],'°F')+'</b></span><span>🌡️ Feels like <b>'+weatherMetric(d.apparent_temperature_max[index],'°')+' / '+weatherMetric(d.apparent_temperature_min[index],'°F')+'</b></span><span>🌧️ Rain chance <b>'+weatherMetric(d.precipitation_probability_max[index],'%')+'</b></span><span>💨 Max wind <b>'+weatherMetric(d.wind_speed_10m_max[index],' mph')+' '+(d.wind_direction_10m_dominant[index]==null?'':cardinal(d.wind_direction_10m_dominant[index]))+'</b></span><span>🌤️ '+weatherLabel(d.weather_code[index])+'</span></div>';
   }else html+='<div class="weather-small">Forecast unavailable for this race date yet.</div>';
   card.innerHTML=html+'<div class="weather-small">Near-track weather from Open-Meteo · updated on page load</div>';
  }catch(error){if(card.isConnected)card.textContent='🌥️ Weather temporarily unavailable — try refreshing the page';}
