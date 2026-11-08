@@ -85,10 +85,40 @@ header{background:#020a15f4;border-bottom:2px solid #2a72b3}
 .intro-enter:hover{filter:brightness(1.15)}
 .intro-footnote{text-align:center;color:#829fb9;margin-top:13px;font-size:.64rem}
 @media(max-width:600px){.hero{min-height:415px;background-position:53% center}.intro{padding:7px;align-items:flex-start}.intro-panel{max-height:calc(100dvh - 14px)}.intro-visual{height:150px;padding-bottom:10px}.intro-visual h2{font-size:clamp(2.3rem,11vw,3.3rem)}.intro-visual small{font-size:.58rem;margin-top:8px}.intro-content{padding:12px 12px 15px}.intro-kicker b{font-size:.76rem;padding:7px 17px}.intro-title{font-size:1.08rem;margin:10px 0 4px}.intro-desc{font-size:.74rem;margin-bottom:10px}.intro-box h3{font-size:1rem;padding:7px 12px}.intro-box ul{font-size:.77rem;line-height:1.35;margin:6px 0;padding-left:34px}.intro-box li{padding:1px 2px}.intro-actions{margin-top:9px;gap:8px}.intro-signature strong{font-size:1.7rem}.intro-enter{padding:11px}.intro-footnote{font-size:.6rem;margin-top:10px}}
+
+/* V1.4 approved professional racing design */
+body{background:radial-gradient(ellipse at top,#173b61 0%,#06101d 58%);color:#f5f8ff}
+header{position:relative;background:#010914;border-bottom:2px solid #2b86d5}
+.race-showcase{background:#030a14;border:2px solid #2b8ce3;border-radius:18px;overflow:hidden;box-shadow:0 0 24px #0683f85a,0 19px 45px #0009}
+.hero-banner{height:clamp(125px,25vw,260px);background:#12263f url("racing-banner.svg") center/cover no-repeat;border-bottom:3px solid #dd3334}
+.race-menu{display:flex;gap:5px;flex-wrap:wrap;padding:8px;background:linear-gradient(#182c47,#061626);border-bottom:2px solid #307ad1}
+.race-menu .btn{flex:1;min-width:132px;background:linear-gradient(#183d67,#0b1a33);border:1px solid #478ac3;border-radius:7px;min-height:42px;font-size:.84rem}
+.race-menu .btn.primary{background:linear-gradient(#f34d40,#9b1525)}
+.stage-panel{text-align:center;padding:25px 20px 30px;background:linear-gradient(150deg,#050c14,#02070e 65%,#0c2345)}
+.stage-heading h1{font:bold italic clamp(1.5rem,3.8vw,2.3rem)/1.1 Impact,"Arial Black",system-ui,sans-serif;letter-spacing:.01em;color:#ffda4c;margin:14px 0 5px;text-shadow:0 3px 5px #000}
+.stage-heading p{color:#e7f1fc;margin:8px 0 19px;font-size:.94rem}
+.version-silver{display:inline-block;color:#07182a;background:linear-gradient(#fff,#b7c5d3 70%,#e5edf8);padding:8px 22px;font-size:.82rem;font-weight:950;font-style:italic;border-radius:30px;box-shadow:0 4px 12px #0009}
+.stage-grid{max-width:790px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.spec-box{text-align:left;color:#142537;background:linear-gradient(#fdfefe,#dde6f3);border:2px solid #e4f3ff;border-radius:12px;overflow:hidden;box-shadow:0 6px 18px #0008}
+.spec-box h2{margin:0;background:linear-gradient(90deg,#a71527,#ea413c 60%,#961224);padding:11px 16px;color:white;font:bold italic 1.13rem system-ui,sans-serif}
+.spec-box.future h2{background:linear-gradient(90deg,#0a3887,#1b70d2 60%,#0a316f)}
+.spec-box ul{margin:7px 0 12px;padding-left:32px;font-size:.89rem;font-weight:650;line-height:1.54}
+.spec-box li{padding:2px 8px 2px 0}
+.spec-box li::marker{content:"✓  ";color:#c52330;font-weight:900}
+.spec-box.future li::marker{color:#1468be}
+.home-signed{margin:18px 0 15px;font-size:.82rem}
+.home-signed strong{display:block;color:white;font:italic 2rem "Segoe Script","Brush Script MT",cursive;letter-spacing:-.06em;text-shadow:0 3px 4px #000;transform:rotate(-4deg)}
+.stage-actions{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:13px}
+.stage-actions .btn.blue-enter{background:linear-gradient(#2499ff,#0058d1 58%,#001b59);border:2px solid #a1deff;border-radius:30px;color:white;min-width:205px;min-height:50px;font-weight:1000;font-style:italic;box-shadow:0 0 12px #0c8cfb,0 0 26px #0867d582}
+.stage-actions .btn.outline{background:#071729;border-radius:25px;font-size:.83rem}
+.intro-visual{height:clamp(130px,28vw,210px);background:#081b32 url("racing-banner.svg") center/cover no-repeat}
+.intro-visual h2,.intro-visual small{display:none}
+.intro-enter{background:linear-gradient(#248fff,#0053b4 65%,#031d5a);border:2px solid #abe2ff;border-radius:30px;box-shadow:0 0 14px #187be4}
+@media(max-width:650px){.wrap{padding:10px 8px 110px}.race-showcase{border-radius:13px}.hero-banner{height:clamp(105px,27vw,165px)}.stage-panel{padding:18px 11px 23px}.stage-grid{grid-template-columns:1fr;gap:10px}.spec-box h2{font-size:1.03rem;padding:8px 12px}.spec-box ul{font-size:.82rem;padding-left:30px;line-height:1.4}.spec-box li{padding:2px 4px 1px 0}.stage-heading h1{font-size:1.5rem}.race-menu .btn{min-width:calc(50% - 4px);flex:0 0 calc(50% - 4px);font-size:.75rem}.home-signed strong{font-size:1.8rem}.intro-visual{height:155px}}
 </style></head><body>
 <div class="intro" id="welcomeIntro" role="dialog" aria-modal="true" aria-labelledby="introHeading" hidden><div class="intro-panel">
  <div class="intro-visual"><div><h2><span class="race-word">RACE</span><span class="command-word">COMMAND</span></h2><small>🏁 NASCAR · O’REILLY · TRUCKS · ARCA · MORE</small></div></div>
- <div class="intro-content"><div class="intro-kicker"><b>VERSION 1.3 · PREVIEW</b><span>Welcome aboard</span></div>
+ <div class="intro-content"><div class="intro-kicker"><b>VERSION 1.4 · PREVIEW</b><span>Welcome aboard</span></div>
  <h2 class="intro-title" id="introHeading">Your complete racing companion</h2>
  <p class="intro-desc">Follow NASCAR Cup, O’Reilly, Craftsman Trucks and ARCA from one convenient place. Explore race schedules, make predictions, and get ready for more racing features.</p>
  <div class="intro-grid"><section class="intro-box" aria-label="What it does"><h3>🏁 What It Does</h3><ul><li>Browse 2026 Championship and 2027 races</li><li>Follow Cup, O’Reilly, Trucks and ARCA</li><li>Try driver win-percentage estimates</li><li>Save personal winner picks</li><li>Open official driver and results sources</li></ul></section>
@@ -96,12 +126,21 @@ header{background:#020a15f4;border-bottom:2px solid #2a72b3}
  <div class="intro-actions"><p class="intro-signature">Designed by <strong>James Meadows</strong></p><button class="btn intro-enter" type="button" id="enterApp">ENTER APP 🏁</button></div>
  <p class="intro-footnote">Independent, unofficial racing fan app. Predictions are fan estimates, not sportsbook odds. No money betting.</p>
  </div></div></div>
-<header><div class="top"><div class="brand"><div class="logo">RC</div><div>RACE COMMAND<small>Racing fan headquarters</small></div></div><span class="statuspill">UNOFFICIAL · V1.3 PREVIEW</span></div></header>
+<header><div class="top"><div class="brand"><div class="logo">RC</div><div>RACE COMMAND<small>Racing fan headquarters</small></div></div><span class="statuspill">UNOFFICIAL · V1.4 PREVIEW</span></div></header>
 <main class="wrap">
-<section class="view" id="home"><div class="hero"><div class="eyebrow">🏁 ALL THE ACTION · ONE PIT STOP</div><h1>RACE<br><em>COMMAND</em></h1><p class="lead">The racing fan hub for NASCAR Cup, O'Reilly, Trucks and ARCA. Follow 2026 Championship Weekend and the published 2027 schedule, check official sources, and make your own winner predictions.</p><div class="actions"><button class="btn primary" data-tab="schedule">🏎️ Race schedule</button><button class="btn" data-tab="odds">📊 Win odds</button></div><div class="creator-credit">Designed by <strong>James Meadows</strong><button class="version-reopen" type="button" data-open-welcome>V1.3 · Features &amp; What’s Coming</button></div></div>
+<section class="view" id="home">
+<div class="race-showcase">
+<div class="hero-banner" role="img" aria-label="Race Command racing cars at a speedway"></div>
+<div class="race-menu"><button class="btn primary" data-tab="schedule">▦ &nbsp; Race Schedules</button><button class="btn" data-tab="stats">🏎️ Drivers &amp; Stats</button><button class="btn" data-tab="odds">📊 Win Odds</button><button class="btn" data-tab="picks">🏆 Winner Picks</button></div>
+<div class="stage-panel"><div class="stage-heading"><span class="version-silver">VERSION V1.4 · PREVIEW</span><h1>YOUR RACING HEADQUARTERS</h1><p>A Complete Racing Companion for NASCAR Fans</p></div>
+<div class="stage-grid"><section class="spec-box"><h2>🏁 &nbsp; What It Does</h2><ul><li>View race schedules and event details</li><li>Follow Cup, O'Reilly, Trucks and ARCA</li><li>Try fan-estimated win probabilities</li><li>Make your winner picks</li><li>Visit official driver stats and results</li></ul></section>
+<section class="spec-box future"><h2>🚀 &nbsp; What's Coming</h2><ul><li>Driver statistics and season standings</li><li>Entry lists and complete race results</li><li>Group pick'em leaderboard</li><li>Smarter data-based win predictions</li><li>Dirt tracks and more racing series</li><li>Android and iPhone editions</li></ul></section></div>
+<p class="home-signed">Designed by <strong>James Meadows</strong></p>
+<div class="stage-actions"><button class="btn blue-enter" data-tab="schedule">ENTER APP ❯</button><button class="btn outline" type="button" data-open-welcome>Version &amp; What's Coming</button></div></div></div>
 <div class="stats"><div class="stat"><b>4</b><span>Major series</span></div><div class="stat"><b id="totalRaces">—</b><span>2026–27 events</span></div><div class="stat"><b id="totalPicks">0</b><span>My picks</span></div></div>
-<h2>🏆 Championship Weekend · Nov 6–8, 2026</h2><p class="muted">Homestead-Miami Speedway · All race times shown in Central Time. Schedule verified with NASCAR.</p><div id="champRaces" class="cards"></div><p class="small" style="margin:10px 2px 0">Official race details: <a href="https://www.nascar.com/weekend-schedule/weekend-schedule-for-2026-homestead-miami-speedway-championship-race/" target="_blank" rel="noopener noreferrer">NASCAR Championship Weekend ↗</a></p><h2>📅 Up next</h2><p class="muted">Additional 2027 races. Times and entry lists will be added when officially announced.</p><div id="nextRaces" class="cards"></div>
-<h2>🔥 Built for race fans</h2><div class="featuregrid"><div class="card"><h3>📊 Odds of Winning</h3><p>Use performance ratings to model a driver's chances. Transparent fan estimates, not fabricated bookmaker lines.</p><button class="btn small" data-tab="odds">Explore win odds</button></div><div class="card"><h3>🏆 Friends Pick 'Em</h3><p>Pick winners now on your own device. Private groups, shared standings and scoring will come with a database.</p><button class="btn small" data-tab="picks">Make a pick</button></div></div></section>
+<h2>🏆 Championship Weekend · Nov 6–8, 2026</h2><p class="muted">Homestead-Miami Speedway · Times shown in Central Time.</p><div id="champRaces" class="cards"></div><p class="small">Official details: <a href="https://www.nascar.com/weekend-schedule/" target="_blank" rel="noopener noreferrer">NASCAR race schedule ↗</a></p>
+<h2>📅 Up next · 2027</h2><p class="muted">Upcoming events from published 2027 schedules. Times and entries will be added as announced.</p><div id="nextRaces" class="cards"></div>
+<h2>🔥 Race Fan Tools</h2><div class="featuregrid"><div class="card"><h3>📊 Odds of Winning</h3><p>Try fan-rated win probabilities, not sportsbook odds.</p><button class="btn small" data-tab="odds">Explore win odds</button></div><div class="card"><h3>🏆 Pick the Winner</h3><p>Choose your drivers. Friends group competitions are coming.</p><button class="btn small" data-tab="picks">Make a pick</button></div></div></section>
 <section class="view" id="schedule" hidden><h2>🏁 2026–27 Race Schedule</h2><p class="muted">Includes November 6–8, 2026 Championship Weekend plus published 2027 NASCAR and ARCA dates. All displayed race times are Central Time; remaining times TBA.</p><div class="chips" id="seriesFilter"><button class="chip active" data-series="All">All</button><button class="chip" data-series="Cup">Cup</button><button class="chip" data-series="OReilly">O'Reilly</button><button class="chip" data-series="Truck">Trucks</button><button class="chip" data-series="ARCA">ARCA</button></div><div class="toolbar"><input class="field" id="raceSearch" type="search" placeholder="Search track, race or month…" aria-label="Search races"></div><p class="muted" id="scheduleCount"></p><div id="scheduleCards" class="cards"></div></section>
 <section class="view" id="odds" hidden><h2>📊 Odds of Winning</h2><p class="muted">Create your own driver win-probability estimates for a race. Real sportsbook odds and verified live predictions require a licensed data feed.</p><div class="notice"><strong>Important:</strong> These are experimental, user-entered <strong>fan estimates</strong> — NOT real betting odds or factual forecasts. The model compares each driver with an average remaining field. Entry lists and performance scores are not loaded automatically.</div>
 <div class="two"><div class="card"><h3>Set up a race</h3><label for="oddsRace">Race</label><select class="field" id="oddsRace"></select><label for="fieldSize">Expected field size</label><select class="field" id="fieldSize"><option>36</option><option selected>40</option><option>32</option><option>30</option><option>25</option><option>20</option></select><p class="small">Choose a field size appropriate for the series; confirmed fields can change.</p></div>
@@ -109,7 +148,7 @@ header{background:#020a15f4;border-bottom:2px solid #2a72b3}
 <h2>🏎️ Your projected win probabilities</h2><p class="muted">Percentages are relative to the chosen field size. Drivers you have not entered are assumed average.</p><div id="oddsResults"></div><button class="btn small" id="clearDrivers">Reset this race's estimates</button></section>
 <section class="view" id="picks" hidden><h2>🏆 Pick the Winner</h2><p class="muted">Choose your winning driver before the race. Picks are stored only on this browser in this first demo.</p><div class="card"><label for="pickRace">Race</label><select class="field" id="pickRace"></select><label for="pickName">Your winning driver</label><input class="field" id="pickName" maxlength="60" placeholder="Driver name"><button class="btn primary" style="margin-top:14px" id="savePick">🏁 Save my pick</button><p class="small" id="pickMessage" role="status"></p></div><h2>My race picks</h2><div id="picksList"></div><div class="notice">Coming next: secure accounts, invite codes, private groups, point scoring, locked picks before races, and a shared leaderboard. These need a cloud database and are <strong>not live</strong> yet. No cash betting.</div></section>
 <section class="view" id="stats" hidden><h2>📈 Drivers & Statistics</h2><p class="muted">Use verified official sources for up-to-date drivers, standings, results and entry lists. We won't invent statistics or unannounced 2027 lineups.</p><div class="card" id="statsLinks"><div class="resource"><div><b>NASCAR official standings</b><small>Cup, O'Reilly, Truck championship tables</small></div><a class="outlink" target="_blank" rel="noopener noreferrer" href="https://www.nascar.com/standings/">View ↗</a></div><div class="resource"><div><b>NASCAR driver directory</b><small>Profiles and career information</small></div><a class="outlink" target="_blank" rel="noopener noreferrer" href="https://www.nascar.com/drivers/">View ↗</a></div><div class="resource"><div><b>NASCAR results</b><small>Race finishing positions and news</small></div><a class="outlink" target="_blank" rel="noopener noreferrer" href="https://www.nascar.com/results/">View ↗</a></div><div class="resource"><div><b>ARCA schedule & results</b><small>ARCA Menards Series race details</small></div><a class="outlink" target="_blank" rel="noopener noreferrer" href="https://www.arcaracing.com/arca-menards-series/">View ↗</a></div></div><h2>📢 Sources & data</h2><p class="muted">The 2026 Championship Weekend schedule was checked against official NASCAR listings; 2027 dates were transcribed from official NASCAR and ARCA announcements. Schedules are not automatically updated in this preview.</p><div class="card"><div class="resource"><a href="https://www.nascar.com/news-media/2026/08/26/2027-nascar-schedule-confirmed-dates-tracks-for-all-three-national-series/" target="_blank" rel="noopener noreferrer">2027 NASCAR national series schedule ↗</a></div><div class="resource"><a href="https://www.arcaracing.com/2026/10/13/2027-arca-menards-series-schedule/" target="_blank" rel="noopener noreferrer">2027 ARCA schedule ↗</a></div></div></section>
-<footer class="footer"><span class="footer-credit">Designed by James Meadows</span>Race Command · Independent, unofficial fan project · Not affiliated with or endorsed by NASCAR or ARCA.<br>All marks belong to their respective owners. No wagering or money handling. V1.3 test build.</footer>
+<footer class="footer"><span class="footer-credit">Designed by James Meadows</span>Race Command · Independent, unofficial fan project · Not affiliated with or endorsed by NASCAR or ARCA.<br>All marks belong to their respective owners. No wagering or money handling. V1.4 test build.</footer>
 </main>
 <nav class="bottom" aria-label="Main sections"><button class="tab active" data-tab="home"><i>🏠</i>Home</button><button class="tab" data-tab="schedule"><i>🏁</i>Races</button><button class="tab" data-tab="odds"><i>📊</i>Odds</button><button class="tab" data-tab="picks"><i>🏆</i>Picks</button><button class="tab" data-tab="stats"><i>📈</i>Stats</button></nav>
 <script>
@@ -152,7 +191,7 @@ renderSchedule();renderOdds();renderPicks();
 
 /* V1.1 splash / version guide. Only auto-displays for each new version. */
 (function(){
-  const version="1.3";
+  const version="1.4";
   const screen=document.getElementById("welcomeIntro");
   const enter=document.getElementById("enterApp");
   const seenKey="race-command-version-seen";
@@ -162,6 +201,6 @@ renderSchedule();renderOdds();renderPicks();
   document.querySelectorAll("[data-open-welcome]").forEach(b=>b.addEventListener("click",openWelcome));
   document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!screen.hidden)closeWelcome()});
   let seen="";try{seen=localStorage.getItem(seenKey)||""}catch(e){}
-  if(seen!==version)openWelcome();
+  openWelcome(); // Open the approved welcome layout whenever app loads.
 })();
 </script></body></html>
