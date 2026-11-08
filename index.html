@@ -154,19 +154,54 @@ header{position:relative;background:#010914;border-bottom:2px solid #2b86d5}
 .bottom .tab{max-width:110px;padding:5px 3px}
 @media(max-width:900px){.three-designs{grid-template-columns:1fr;max-width:520px;margin:auto}.design-panel{padding:0 17px 16px}.design-header{margin:0 -17px 9px;font-size:1rem}.design-logo{font-size:2.2rem}.design-panel ul{font-size:.87rem}.design-signature strong{font-size:1.7rem}.feature-title{font-size:1.1rem}.drivers-list{grid-template-columns:1fr}}
 @media(max-width:530px){.driver-search{flex-wrap:wrap}.driver-search .btn{width:100%}.driver-card{padding:10px;gap:8px}.driver-car{flex:0 0 44px}.standings-table{font-size:.77rem}.chase-driver{font-size:.78rem}.standings-table td{padding:9px 5px}.stage-logo-main{font-size:1.8rem}.stage-logo p{font-size:.55rem}.stage-bottom{font-size:.62rem}.design-logo{font-size:1.9rem}.bottom .tab i{font-size:1.05rem}.bottom .tab{font-size:.62rem}}
+
+/* V1.6 race-win odds integrated in the Chase driver's cards */
+.driver-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 8px}
+.driver-tabs .chip.active{background:#ffd460;color:#07172b}
+.driver-card.with-market{position:relative;gap:8px;padding:14px 10px;align-items:center}
+.driver-card.with-market .driver-main{min-width:0}
+.driver-card.with-market .driver-muted{line-height:1.3}
+.market-winchance{display:flex;flex-direction:column;flex:0 0 102px;text-align:center;align-items:center;background:linear-gradient(145deg,#103552,#061523);border:1px solid #368fcd;border-radius:11px;padding:9px 6px;color:#fff;gap:2px}
+.market-winchance b{font-size:1.47rem;color:#ffdf61;font-weight:950;font-variant-numeric:tabular-nums;letter-spacing:-.03em}
+.market-kicker{font-size:.58rem;font-weight:900;letter-spacing:.02em;color:#b9dcfa}
+.market-line{font-size:.62rem;color:#d7e9fa;font-weight:700}
+.market-winchance.absent{border-color:#6c8397;background:#202b35}
+.market-winchance.absent b{color:#d8e2ed}
+.driver-card.with-market .driver-rank{flex:0 0 39px}
+.market-source{border:1px solid #3977b2;background:#102a44;border-radius:13px;padding:12px;display:flex;gap:5px;flex-direction:column;font-size:.82rem;margin:12px 0}
+.market-source span{color:#b8cee3}
+.market-source a{font-weight:800}
+.modal-chance{display:flex;flex-direction:column;gap:5px;padding:13px;background:linear-gradient(100deg,#18436c,#102337);border:1px solid #3282cd;border-radius:10px;color:#ffdf69}
+.modal-chance span{color:#dcecff;font-size:.82rem}
+.chase-win-cell{text-align:right;font-weight:950;color:#ffdc65;white-space:nowrap}
+.standings-table th:last-child{text-align:right}
+@media(max-width:520px){
+ .drivers-list{grid-template-columns:1fr}
+ .driver-card.with-market{padding:11px 8px;gap:7px}
+ .driver-card.with-market .driver-car{flex:0 0 35px;font-size:1.12rem}
+ .driver-card.with-market .driver-main strong{font-size:.84rem}
+ .driver-card.with-market .driver-muted{font-size:.67rem}
+ .market-winchance{flex-basis:88px;padding:6px 4px}
+ .market-winchance b{font-size:1.2rem}
+ .market-kicker{font-size:.53rem}
+ .market-line{font-size:.57rem}
+ .driver-card.with-market .driver-rank{flex-basis:24px;font-size:.75rem}
+ .standings-table{font-size:.7rem}
+ .chase-win-cell{font-size:.7rem}
+ }
 </style></head><body>
 <div class="intro" id="welcomeIntro" role="dialog" aria-modal="true" aria-labelledby="introHeading" hidden><div class="intro-panel">
  <div class="intro-visual"><div><h2><span class="race-word">RACE</span><span class="command-word">COMMAND</span></h2><small>🏁 NASCAR · O’REILLY · TRUCKS · ARCA · MORE</small></div></div>
- <div class="intro-content"><div class="intro-kicker"><b>VERSION 1.5 · PREVIEW</b><span>Welcome aboard</span></div>
+ <div class="intro-content"><div class="intro-kicker"><b>VERSION 1.6 · PREVIEW</b><span>Welcome aboard</span></div>
  <h2 class="intro-title" id="introHeading">Your complete racing companion</h2>
  <p class="intro-desc">Follow NASCAR Cup, O’Reilly, Craftsman Trucks and ARCA from one convenient place. Explore race schedules, make predictions, and get ready for more racing features.</p>
  <div class="intro-grid"><section class="intro-box" aria-label="What it does"><h3>🏁 What It Does</h3><ul><li>Browse 2026 Championship and 2027 races</li><li>Follow Cup, O’Reilly, Trucks and ARCA</li><li>Try driver win-percentage estimates</li><li>Save personal winner picks</li><li>Open official driver and results sources</li></ul></section>
- <section class="intro-box future" aria-label="What's coming"><h3>🚀 What’s Coming</h3><ul><li>Driver statistics and season standings</li><li>Entry lists and complete race results</li><li>Private group pick’em and leaderboard</li><li>Smarter data-based win predictions</li><li>More racing series and short tracks</li><li>Android and iPhone editions</li></ul></section></div>
+ <section class="intro-box future" aria-label="What's coming"><h3>🚀 What’s Coming</h3><ul><li>Driver statistics and season standings</li><li>Entry lists and complete race results</li><li>Private group pick’em and leaderboard</li><li>Live race-odds updates and predictions</li><li>More racing series and short tracks</li><li>Android and iPhone editions</li></ul></section></div>
  <div class="intro-actions"><p class="intro-signature">Designed by <strong>James Meadows</strong></p><button class="btn intro-enter" type="button" id="enterApp">ENTER APP 🏁</button></div>
  <p class="intro-footnote">Independent, unofficial racing fan app. Predictions are fan estimates, not sportsbook odds. No money betting.</p>
  </div></div></div>
 <div class="driver-modal" id="driverDetail" role="dialog" aria-modal="true" aria-labelledby="driverTitle" hidden><div class="driver-modal-panel"><div class="line"><h2 id="driverTitle">Driver profile</h2><button class="btn small" id="closeDriver">Close ✕</button></div><div id="driverBody"></div></div></div>
-<header><div class="top"><div class="brand"><div class="logo">RC</div><div>RACE COMMAND<small>Racing fan headquarters</small></div></div><span class="statuspill">UNOFFICIAL · V1.5 PREVIEW</span></div></header>
+<header><div class="top"><div class="brand"><div class="logo">RC</div><div>RACE COMMAND<small>Racing fan headquarters</small></div></div><span class="statuspill">UNOFFICIAL · V1.6 PREVIEW</span></div></header>
 <main class="wrap">
 <section class="view" id="home">
 <div class="race-showcase">
@@ -177,7 +212,7 @@ header{position:relative;background:#010914;border-bottom:2px solid #2b86d5}
 <div class="three-designs">
 <section class="design-panel design-short">
 <div class="design-header">SHORT VERSION <small>Quick &amp; Straight to the Point</small></div>
-<h3 class="design-logo">RACE <em>COMMAND</em></h3><span class="version-silver">VERSION V1.5</span>
+<h3 class="design-logo">RACE <em>COMMAND</em></h3><span class="version-silver">VERSION V1.6</span>
 <h4 class="feature-title">What It Does</h4>
 <ul><li>Race schedules and details</li><li>NASCAR, O'Reilly, Trucks, ARCA</li><li>Make your winner picks</li><li>View fan win estimates</li><li>See drivers and current Chase ranks</li></ul>
 <h4 class="feature-title blue">What's Coming</h4>
@@ -186,7 +221,7 @@ header{position:relative;background:#010914;border-bottom:2px solid #2b86d5}
 </section>
 <section class="design-panel design-bold">
 <div class="design-header">MORE EXCITING VERSION <small>Bold, High-Energy, Fan Focused</small></div>
-<h3 class="design-logo">RACE <em>COMMAND</em></h3><span class="version-silver">VERSION V1.5</span>
+<h3 class="design-logo">RACE <em>COMMAND</em></h3><span class="version-silver">VERSION V1.6</span>
 <div class="design-tagline">YOUR RACING HEADQUARTERS!</div><p class="design-desc">Schedules, drivers, odds, and picks for NASCAR, Trucks, ARCA, and more.</p>
 <h4 class="feature-title">WHAT IT DOES</h4>
 <ul><li>View race schedules</li><li>Browse Cup, Trucks, and ARCA</li><li>View the Chase standings</li><li>Check Homestead qualifying</li><li>Make winner picks</li></ul>
@@ -196,13 +231,13 @@ header{position:relative;background:#010914;border-bottom:2px solid #2b86d5}
 </section>
 <section class="design-panel design-pro">
 <div class="design-header">CLEAN &amp; PROFESSIONAL VERSION <small>Polished, Organized, Easy to Read</small></div>
-<h3 class="design-logo">RACE <em>COMMAND</em></h3><span class="version-silver">VERSION V1.5</span>
+<h3 class="design-logo">RACE <em>COMMAND</em></h3><span class="version-silver">VERSION V1.6</span>
 <p class="design-desc">A Complete Racing Companion for NASCAR Fans</p>
 <div class="design-feature-box"><h4 class="feature-title">What It Does</h4><ul><li>View race schedules and details</li><li>Follow NASCAR, O'Reilly, Trucks and ARCA</li><li>Check fan win estimates</li><li>View drivers, standings and qualifying</li><li>Make your winner picks</li></ul></div>
 <div class="design-feature-box"><h4 class="feature-title blue">What's Coming</h4><ul><li>Complete career stats and season standings</li><li>Expanded qualifying and race results</li><li>Group pick'em leaderboard</li><li>Automatic win predictions</li><li>Dirt tracks and other series</li><li>Android and iPhone editions</li></ul></div>
 <p class="design-signature">Designed by <strong>James Meadows</strong></p><button class="btn race-blue-button" data-tab="chase">ENTER APP ❯</button>
 </section></div>
-<div class="stage-bottom"><b>🏁 RACE COMMAND V1.5</b><span>WHAT'S NEW: Chase standings &amp; driver profiles</span><span>WHAT'S COMING: More stats &amp; live updates</span></div>
+<div class="stage-bottom"><b>🏁 RACE COMMAND V1.6</b><span>WHAT'S NEW: Chase standings &amp; driver profiles</span><span>WHAT'S COMING: More stats &amp; live updates</span></div>
 </div></div>
 <div class="stats"><div class="stat"><b>4</b><span>Major series</span></div><div class="stat"><b id="totalRaces">—</b><span>2026–27 events</span></div><div class="stat"><b id="totalPicks">0</b><span>My picks</span></div></div>
 <h2>🏆 Championship Weekend · Nov 6–8, 2026</h2><p class="muted">Homestead-Miami Speedway · Times shown in Central Time.</p><div id="champRaces" class="cards"></div><p class="small">Official details: <a href="https://www.nascar.com/weekend-schedule/" target="_blank" rel="noopener noreferrer">NASCAR race schedule ↗</a></p>
@@ -215,10 +250,10 @@ header{position:relative;background:#010914;border-bottom:2px solid #2b86d5}
 <h2>🏎️ Your projected win probabilities</h2><p class="muted">Percentages are relative to the chosen field size. Drivers you have not entered are assumed average.</p><div id="oddsResults"></div><button class="btn small" id="clearDrivers">Reset this race's estimates</button></section>
 <section class="view" id="picks" hidden><h2>🏆 Pick the Winner</h2><p class="muted">Choose your winning driver before the race. Picks are stored only on this browser in this first demo.</p><div class="card"><label for="pickRace">Race</label><select class="field" id="pickRace"></select><label for="pickName">Your winning driver</label><input class="field" id="pickName" maxlength="60" placeholder="Driver name"><button class="btn primary" style="margin-top:14px" id="savePick">🏁 Save my pick</button><p class="small" id="pickMessage" role="status"></p></div><h2>My race picks</h2><div id="picksList"></div><div class="notice">Coming next: secure accounts, invite codes, private groups, point scoring, locked picks before races, and a shared leaderboard. These need a cloud database and are <strong>not live</strong> yet. No cash betting.</div></section>
 <section class="view" id="drivers" hidden>
-<h2>🏎️ Drivers</h2><p class="muted">Meet the 16 drivers in the 2026 Cup Chase. Select a driver for career history, Cup experience, points, wins, and the qualifying result for Homestead.</p>
-<div class="driver-search"><input class="field" id="driverSearch" type="search" placeholder="Find a driver, team, or car number…" aria-label="Search drivers"><button class="btn small" data-tab="chase">🏆 Chase standings</button></div>
+<h2>🏎️ Drivers &amp; Their Race Win Chances</h2><p class="muted">See a win chance directly on every driver card. Based on published Homestead race-winner odds (November 5, 2026), adjusted by Race Command across the full 40-car entry list. These are pre-race estimates — not championship odds or live updates.</p><div class="market-source"><strong>🏁 Homestead — Sunday, November 8</strong><span>Market odds snapshot: November 5, 2026</span><a href="https://heavy.com/sports/nascar/nascar-homestead-betting-odds-favorites-sleepers-longshots/" target="_blank" rel="noopener noreferrer">View the published race odds ↗</a></div>
+<div class="driver-tabs" role="group" aria-label="Which drivers to show"><button class="chip active" data-driver-filter="chase" aria-pressed="true">🏆 Chase 16</button><button class="chip" data-driver-filter="field" aria-pressed="false">🏎️ Full 40-Car Field</button></div><div class="driver-search"><input class="field" id="driverSearch" type="search" placeholder="Find a driver, team, or car number…" aria-label="Search drivers"><button class="btn small" data-tab="chase">🏆 Chase standings</button></div>
 <div class="drivers-list" id="driversList"></div>
-<div class="notice">Career start refers to the driver's <strong>first NASCAR Cup Series appearance</strong>, not when they began racing in other series. 2026 wins and points are through Martinsville, November 1. Qualifying is for Homestead, November 8. Driver stats are a dated snapshot, not live data.</div>
+<div class="notice"><strong>How we calculate the percentage:</strong> Published American race-win odds are converted to implied chances and normalized across all 40 entrants to remove the market margin. The result is a <strong>Race Command market-based estimate</strong>, not a guaranteed prediction, live odds, or a driver’s chance of winning the championship. Carson Hocevar is still listed in the Chase standings but will not race at Homestead; Justin Haley replaces him. Career start refers to first Cup appearance. Driver stats are dated snapshots.</div>
 <p class="small">Additional driver profiles and complete career totals are coming. <a href="https://www.nascar.com/drivers/" target="_blank" rel="noopener noreferrer">Official NASCAR driver directory ↗</a></p>
 </section>
 <section class="view" id="chase" hidden>
@@ -227,12 +262,12 @@ header{position:relative;background:#010914;border-bottom:2px solid #2b86d5}
 <div class="chase-hero"><div><span class="eyebrow">POINTS LEADER</span><h2>🏎️ Kyle Larson · No. 5</h2><p>2,469 points · 67 ahead of second place</p></div><span class="chase-trophy">🏆</span></div>
 <div class="notice"><b>How the Chase works:</b> The top 16 drivers qualified for a 10-race points championship, with no elimination rounds. The highest points total after Homestead wins the title. <b>Only Larson, Bell, and Hamlin remain mathematically eligible to win the 2026 Cup championship.</b></div>
 <div class="chase-key"><span><i class="key-dot active"></i> Title eligible</span><span><i class="key-dot elim"></i> Out of title contention</span></div>
-<div class="standings-wrap"><table class="standings-table"><thead><tr><th>Pos.</th><th>Driver</th><th>Pts</th><th>Behind</th></tr></thead><tbody id="chaseRows"></tbody></table></div>
+<div class="standings-wrap"><table class="standings-table"><thead><tr><th>Pos.</th><th>Driver</th><th>Pts</th><th>Behind</th><th>Race win</th></tr></thead><tbody id="chaseRows"></tbody></table></div>
 <p class="small" style="margin:13px 0">Points and order: <a href="https://www.nascar.com/news-media/2026/11/02/the-chase-report-presented-by-mobil-1-where-we-stand-after-martinsville/" target="_blank" rel="noopener noreferrer">NASCAR Chase Report ↗</a> · <a href="https://www.jayski.com/nascar-cup-series/2026-nascar-cup-series-fall-martinsville-race-page/" target="_blank" rel="noopener noreferrer">Jayski points table ↗</a>.</p>
 <button class="btn primary" data-tab="drivers">🏎️ Meet the Chase drivers</button>
 </section>
 <section class="view" id="stats" hidden><h2>📈 Drivers & Statistics</h2><p class="muted">Use verified official sources for up-to-date drivers, standings, results and entry lists. We won't invent statistics or unannounced 2027 lineups.</p><div class="card" id="statsLinks"><div class="resource"><div><b>NASCAR official standings</b><small>Cup, O'Reilly, Truck championship tables</small></div><a class="outlink" target="_blank" rel="noopener noreferrer" href="https://www.nascar.com/standings/">View ↗</a></div><div class="resource"><div><b>NASCAR driver directory</b><small>Profiles and career information</small></div><a class="outlink" target="_blank" rel="noopener noreferrer" href="https://www.nascar.com/drivers/">View ↗</a></div><div class="resource"><div><b>NASCAR results</b><small>Race finishing positions and news</small></div><a class="outlink" target="_blank" rel="noopener noreferrer" href="https://www.nascar.com/results/">View ↗</a></div><div class="resource"><div><b>ARCA schedule & results</b><small>ARCA Menards Series race details</small></div><a class="outlink" target="_blank" rel="noopener noreferrer" href="https://www.arcaracing.com/arca-menards-series/">View ↗</a></div></div><h2>📢 Sources & data</h2><p class="muted">The 2026 Championship Weekend schedule was checked against official NASCAR listings; 2027 dates were transcribed from official NASCAR and ARCA announcements. Schedules are not automatically updated in this preview.</p><div class="card"><div class="resource"><a href="https://www.nascar.com/news-media/2026/08/26/2027-nascar-schedule-confirmed-dates-tracks-for-all-three-national-series/" target="_blank" rel="noopener noreferrer">2027 NASCAR national series schedule ↗</a></div><div class="resource"><a href="https://www.arcaracing.com/2026/10/13/2027-arca-menards-series-schedule/" target="_blank" rel="noopener noreferrer">2027 ARCA schedule ↗</a></div></div></section>
-<footer class="footer"><span class="footer-credit">Designed by James Meadows</span>Race Command · Independent, unofficial fan project · Not affiliated with or endorsed by NASCAR or ARCA.<br>All marks belong to their respective owners. No wagering or money handling. V1.5 test build.</footer>
+<footer class="footer"><span class="footer-credit">Designed by James Meadows</span>Race Command · Independent, unofficial fan project · Not affiliated with or endorsed by NASCAR or ARCA.<br>All marks belong to their respective owners. No wagering or money handling. V1.6 test build.</footer>
 </main>
 <nav class="bottom" aria-label="Main sections"><button class="tab active" data-tab="home"><i>🏠</i>Home</button><button class="tab" data-tab="schedule"><i>🏁</i>Races</button><button class="tab" data-tab="drivers"><i>🏎️</i>Drivers</button><button class="tab" data-tab="chase"><i>🏆</i>Chase</button><button class="tab" data-tab="picks"><i>🎯</i>Picks</button><button class="tab" data-tab="odds"><i>📊</i>Odds</button></nav>
 <script>
@@ -276,13 +311,57 @@ renderSchedule();renderOdds();renderPicks();
 
 /* Race Command V1.5 — 2026 Cup Chase and driver profile snapshot */
 const CHASE_DRIVERS=[{"rank":1,"car":5,"name":"Kyle Larson","points":2469,"cupDebut":2013,"seasonWins":3,"qualifying":4,"team":"Hendrick Motorsports","titleEligible":true},{"rank":2,"car":20,"name":"Christopher Bell","points":2402,"cupDebut":2020,"seasonWins":1,"qualifying":6,"team":"Joe Gibbs Racing","titleEligible":true},{"rank":3,"car":11,"name":"Denny Hamlin","points":2399,"cupDebut":2005,"seasonWins":4,"qualifying":2,"team":"Joe Gibbs Racing","titleEligible":true},{"rank":4,"car":19,"name":"Chase Briscoe","points":2385,"cupDebut":2021,"seasonWins":3,"qualifying":1,"team":"Joe Gibbs Racing","titleEligible":false},{"rank":5,"car":22,"name":"Joey Logano","points":2366,"cupDebut":2008,"seasonWins":3,"qualifying":19,"team":"Team Penske","titleEligible":false},{"rank":6,"car":45,"name":"Tyler Reddick","points":2344,"cupDebut":2019,"seasonWins":6,"qualifying":3,"team":"23XI Racing","titleEligible":false},{"rank":7,"car":12,"name":"Ryan Blaney","points":2336,"cupDebut":2014,"seasonWins":3,"qualifying":9,"team":"Team Penske","titleEligible":false},{"rank":8,"car":54,"name":"Ty Gibbs","points":2309,"cupDebut":2022,"seasonWins":2,"qualifying":20,"team":"Joe Gibbs Racing","titleEligible":false},{"rank":9,"car":24,"name":"William Byron","points":2303,"cupDebut":2018,"seasonWins":1,"qualifying":8,"team":"Hendrick Motorsports","titleEligible":false},{"rank":10,"car":9,"name":"Chase Elliott","points":2268,"cupDebut":2015,"seasonWins":2,"qualifying":7,"team":"Hendrick Motorsports","titleEligible":false},{"rank":11,"car":2,"name":"Austin Cindric","points":2263,"cupDebut":2021,"seasonWins":0,"qualifying":5,"team":"Team Penske","titleEligible":false},{"rank":12,"car":77,"name":"Carson Hocevar","points":2259,"cupDebut":2023,"seasonWins":1,"qualifying":null,"team":"Spire Motorsports","titleEligible":false},{"rank":13,"car":23,"name":"Bubba Wallace","points":2257,"cupDebut":2017,"seasonWins":0,"qualifying":18,"team":"23XI Racing","titleEligible":false},{"rank":14,"car":60,"name":"Ryan Preece","points":2214,"cupDebut":2015,"seasonWins":1,"qualifying":32,"team":"RFK Racing","titleEligible":false},{"rank":15,"car":7,"name":"Daniel Suárez","points":2210,"cupDebut":2017,"seasonWins":1,"qualifying":10,"team":"Spire Motorsports","titleEligible":false},{"rank":16,"car":17,"name":"Chris Buescher","points":2199,"cupDebut":2015,"seasonWins":0,"qualifying":17,"team":"RFK Racing","titleEligible":false}];
+
+/* Homestead Cup 2026 race-winning odds, full 40-car field, reported Nov 5, 2026.
+ * Race Command probability = American-odds implied probability
+ * divided by the SUM of all 40 implied probabilities (bookmaker margin removed).
+ * This is an odds-based estimate, not our independent AI prediction and not live.
+ * DO NOT confuse odds to win the RACE with odds to win the CHAMPIONSHIP. */
+const RACE_MARKET={date:'2026-11-08',updated:'2026-11-05',track:'Homestead-Miami Speedway',source:"https://heavy.com/sports/nascar/nascar-homestead-betting-odds-favorites-sleepers-longshots/",name:'NASCAR Cup Championship Race',field:[["Kyle Larson",5,"Hendrick Motorsports",400],["Denny Hamlin",11,"Joe Gibbs Racing",550],["Ryan Blaney",12,"Team Penske",550],["Christopher Bell",20,"Joe Gibbs Racing",600],["Tyler Reddick",45,"23XI Racing",650],["Chase Briscoe",19,"Joe Gibbs Racing",700],["William Byron",24,"Hendrick Motorsports",800],["Joey Logano",22,"Team Penske",1600],["Ty Gibbs",54,"Joe Gibbs Racing",1600],["Chase Elliott",9,"Hendrick Motorsports",1800],["Bubba Wallace",23,"23XI Racing",1800],["Corey Heim",67,"23XI Racing",2500],["Austin Cindric",2,"Team Penske",3000],["Josh Berry",21,"Wood Brothers Racing",3500],["Ross Chastain",1,"Trackhouse Racing",4500],["Ryan Preece",60,"RFK Racing",5000],["Alex Bowman",48,"Hendrick Motorsports",6000],["Brad Keselowski",6,"RFK Racing",6500],["Chris Buescher",17,"RFK Racing",7000],["AJ Allmendinger",16,"Kaulig Racing",7500],["Shane van Gisbergen",97,"Trackhouse Racing",7500],["Daniel Suárez",7,"Spire Motorsports",10000],["Erik Jones",43,"Legacy Motor Club",15000],["Austin Dillon",3,"Richard Childress Racing",19000],["Justin Haley",77,"Spire Motorsports",20000],["Connor Zilisch",88,"Trackhouse Racing",25000],["Michael McDowell",71,"Spire Motorsports",25000],["Todd Gilliland",34,"Front Row Motorsports",30000],["John Hunter Nemechek",42,"Legacy Motor Club",35000],["Austin Hill",33,"Richard Childress Racing",35000],["Zane Smith",38,"Front Row Motorsports",35000],["Ricky Stenhouse Jr.",47,"HYAK Motorsports",35000],["Noah Gragson",4,"Front Row Motorsports",35000],["Riley Herbst",35,"23XI Racing",50000],["Cole Custer",41,"Haas Factory Team",70000],["Ty Dillon",10,"Kaulig Racing",70000],["Cody Ware",51,"Rick Ware Racing",100000],["Casey Mears",62,"Beard Motorsports",100000],["JJ Yeley",44,"NY Racing Team",100000],["Chad Finchum",66,"Garage 66",100000]]};
+const RACE_FIELD=RACE_MARKET.field.map(([name,car,team,odds])=>({name,car,team,odds}));
+const FIELD_RAW_TOTAL=RACE_FIELD.reduce((sum,d)=>sum+100/(d.odds+100),0);
+const RACE_BY_NAME=Object.fromEntries(RACE_FIELD.map(d=>[d.name,d]));
+const normalizedChance=d=>d ? 100*(100/(d.odds+100))/FIELD_RAW_TOTAL : 0;
+const pct=d=>normalizedChance(d).toFixed(normalizedChance(d)<1?2:1)+'%';
+const raceOddsBadge=name=>{const entry=RACE_BY_NAME[name];return entry?'<span class="market-winchance"><span class="market-kicker">RACE WIN CHANCE</span><b>'+pct(entry)+'</b><span class="market-line">Published line +'+entry.odds.toLocaleString('en-US')+'</span></span>':'<span class="market-winchance absent"><span class="market-kicker">RACE WIN CHANCE</span><b>N/A</b><span class="market-line">Not entered</span></span>'};
+const MARKET_DESC='Race Command probability is calculated from published +odds for all 40 drivers, normalized to remove the bookmaker margin. It is not live or independently predicted.';
+let driverFilter='chase';
+
 const driverByName = Object.fromEntries(CHASE_DRIVERS.map(d=>[d.name,d]));
 function chaseStatus(d){return d.titleEligible ? 'Still title eligible' : 'Out of 2026 title contention'}
-function driverCard(d){const quali=d.qualifying ? '#'+d.qualifying+' on Nov 8 Homestead grid' : 'Not racing — Justin Haley qualified the No. 77 in 26th';return '<button class="driver-card" data-driver="'+esc(d.name)+'" aria-label="View '+esc(d.name)+' profile"><span class="driver-car">#'+d.car+'</span><span class="driver-main"><strong>'+esc(d.name)+'</strong><span class="driver-muted">'+esc(d.team)+'</span><span class="driver-muted">Cup debut: '+d.cupDebut+' · '+(2026-d.cupDebut)+' years since debut · '+d.seasonWins+' wins in 2026</span><span class="driver-muted">Qualifying: '+esc(quali)+'</span></span><span class="driver-rank">#'+d.rank+'<small>Chase</small></span></button>'}
-function showDriverDetails(name){const d=driverByName[name];if(!d)return;const modal=$('driverDetail');$('driverTitle').textContent=d.name+' · No. '+d.car;$('driverBody').innerHTML='<p><strong>Team:</strong> '+esc(d.team)+'</p><p><strong>Chase position:</strong> #'+d.rank+' of 16</p><p><strong>2026 Chase points:</strong> '+d.points.toLocaleString('en-US')+' · '+(d.rank===1?'Leader':(2469-d.points)+' behind')+'</p><p><strong>Championship:</strong> '+esc(chaseStatus(d))+'</p><p><strong>First Cup Series appearance:</strong> '+d.cupDebut+' ('+(2026-d.cupDebut)+' years ago)</p><p><strong>2026 Cup wins entering Homestead:</strong> '+d.seasonWins+'</p><p><strong>Homestead qualifying:</strong> '+(d.qualifying?'Position '+d.qualifying:'Did not qualify; Justin Haley took the No. 77')+'</p><p class="small">These are as-of-date records, not live telemetry. Career debut year means first Cup season, even if part-time.</p><p><a href="https://www.nascar.com/drivers/" target="_blank" rel="noopener noreferrer">Open NASCAR driver directory ↗</a></p>';modal.hidden=false;modal.querySelector('button').focus()}
-function renderDrivers(){const q=($('driverSearch')?.value||'').trim().toLowerCase();$('driversList').innerHTML=CHASE_DRIVERS.filter(d=>[d.name,d.car,d.team].some(s=>String(s).toLowerCase().includes(q))).map(driverCard).join('')||'<div class="empty">No matching drivers.</div>'}
-function renderChase(){const rows=CHASE_DRIVERS.map(d=>'<tr><td class="rankcell">'+d.rank+'</td><td><button class="chase-driver" data-driver="'+esc(d.name)+'">#'+d.car+' '+esc(d.name)+'</button><span class="chase-status '+(d.titleEligible?'alive':'out')+'">'+(d.titleEligible?'TITLE ELIGIBLE':'ELIMINATED')+'</span></td><td class="points">'+d.points.toLocaleString('en-US')+'</td><td class="behind">'+(d.rank===1?'—':'-'+(2469-d.points))+'</td></tr>').join('');$('chaseRows').innerHTML=rows}
+function driverCard(d){
+ const isChase=Number.isInteger(d.rank);
+ const quali=isChase?(d.qualifying?'#'+d.qualifying+' at Homestead':'Did not enter; Haley drives the No. 77'):'See official starting lineup';
+ const detail=isChase?'Cup debut: '+d.cupDebut+' · '+(2026-d.cupDebut)+' yrs since debut · '+d.seasonWins+' Cup wins in 2026':'Cup race entry · full season stats coming';
+ return '<button class="driver-card with-market" data-driver="'+esc(d.name)+'" aria-label="View '+esc(d.name)+' details"><span class="driver-car">#'+d.car+'</span><span class="driver-main"><strong>'+esc(d.name)+'</strong><span class="driver-muted">'+esc(d.team)+'</span><span class="driver-muted">'+esc(detail)+'</span><span class="driver-muted">Qualifying: '+esc(quali)+'</span></span>'+raceOddsBadge(d.name)+(isChase?'<span class="driver-rank">#'+d.rank+'<small>Chase</small></span>':'')+'</button>';
+}
+function showDriverDetails(name){
+ const chase=driverByName[name]; const race=RACE_BY_NAME[name]; const d=chase||race;
+ if(!d)return;
+ const modal=$('driverDetail');$('driverTitle').textContent=d.name+' · No. '+d.car;
+ const oddsText=race
+ ? '<div class="modal-chance"><b>Race Command chance to win the Homestead race: '+pct(race)+'</b><span>Published win line: +'+race.odds.toLocaleString('en-US')+'</span></div>'
+ : '<div class="modal-chance"><b>Not entered in the Homestead race</b><span>Justin Haley is driving the No. 77 instead.</span></div>';
+ const chaseText=chase
+ ? '<p><strong>Chase position:</strong> #'+chase.rank+' of 16</p><p><strong>2026 Chase points:</strong> '+chase.points.toLocaleString('en-US')+' · '+(chase.rank===1?'Leader':(2469-chase.points)+' behind')+'</p><p><strong>Championship:</strong> '+esc(chaseStatus(chase))+'</p><p><strong>First Cup Series appearance:</strong> '+chase.cupDebut+' ('+(2026-chase.cupDebut)+' years ago)</p><p><strong>2026 Cup wins entering Homestead:</strong> '+chase.seasonWins+'</p><p><strong>Homestead qualifying:</strong> '+(chase.qualifying?'Position '+chase.qualifying:'Did not qualify; Justin Haley took the No. 77')+'</p>'
+ : '<p><strong>2026 Chase:</strong> Not among the final 16 Chase drivers.</p><p><strong>Qualifying:</strong> Refer to NASCAR starting lineup.</p>';
+ $('driverBody').innerHTML=oddsText+'<p><strong>Team:</strong> '+esc(d.team)+'</p>'+chaseText+
+ '<p class="small">Race win chance is <b>not</b> championship win chance. '+MARKET_DESC+' Source dated November 5, 2026. It will not update automatically.</p>'+
+ '<p><a href="'+RACE_MARKET.source+'" target="_blank" rel="noopener noreferrer">View published race odds ↗</a> · <a href="https://www.nascar.com/drivers/" target="_blank" rel="noopener noreferrer">NASCAR drivers ↗</a></p>';
+ modal.hidden=false; modal.querySelector('button').focus();
+}
+function renderDrivers(){
+ const q=($('driverSearch')?.value||'').trim().toLowerCase();
+ const list=(driverFilter==='chase' ? CHASE_DRIVERS : RACE_FIELD.map(d=>driverByName[d.name]||d));
+ $('driversList').innerHTML=list.filter(d=>[d.name,d.car,d.team].some(v=>String(v).toLowerCase().includes(q))).map(driverCard).join('')||'<div class="empty">No matching drivers.</div>';
+ document.querySelectorAll('[data-driver-filter]').forEach(btn=>{const active=btn.dataset.driverFilter===driverFilter;btn.classList.toggle('active',active);btn.setAttribute('aria-pressed',String(active))});
+}
+function renderChase(){
+ const rows=CHASE_DRIVERS.map(d=>'<tr><td class="rankcell">'+d.rank+'</td><td><button class="chase-driver" data-driver="'+esc(d.name)+'">#'+d.car+' '+esc(d.name)+'</button><span class="chase-status '+(d.titleEligible?'alive':'out')+'">'+(d.titleEligible?'TITLE ELIGIBLE':'OUT OF TITLE CONTENTION')+'</span></td><td class="points">'+d.points.toLocaleString('en-US')+'</td><td class="behind">'+(d.rank===1?'—':'-'+(2469-d.points))+'</td><td class="chase-win-cell">'+(RACE_BY_NAME[d.name]?pct(RACE_BY_NAME[d.name]):'N/A')+'</td></tr>').join('');
+ $('chaseRows').innerHTML=rows;
+}
 $('driverSearch').addEventListener('input',renderDrivers);
+document.querySelectorAll('[data-driver-filter]').forEach(btn=>btn.addEventListener('click',()=>{driverFilter=btn.dataset.driverFilter;renderDrivers()}));
 document.addEventListener('click',e=>{const btn=e.target.closest('[data-driver]');if(btn)showDriverDetails(btn.dataset.driver)});
 $('closeDriver').addEventListener('click',()=>{$('driverDetail').hidden=true});
 $('driverDetail').addEventListener('click',e=>{if(e.target.id==='driverDetail')e.currentTarget.hidden=true});
@@ -291,7 +370,7 @@ renderDrivers();renderChase();
 
 /* V1.5 splash / version guide. */
 (function(){
-  const version="1.5";
+  const version="1.6";
   const screen=document.getElementById("welcomeIntro");
   const enter=document.getElementById("enterApp");
   const seenKey="race-command-version-seen";
