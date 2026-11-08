@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="700" viewBox="0 0 1440 700" role="img" aria-label="Three stock cars racing under sunset lights">
+<defs>
+ <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#071528"/><stop offset=".38" stop-color="#143450"/><stop offset=".77" stop-color="#c45236"/><stop offset="1" stop-color="#ffc374"/></linearGradient>
+ <radialGradient id="glow" cx=".79" cy=".49" r=".5"><stop stop-color="#ffd08b" stop-opacity=".85"/><stop offset="1" stop-color="#f17a45" stop-opacity="0"/></radialGradient>
+ <linearGradient id="road" x2="0" y2="1"><stop stop-color="#3e4951"/><stop offset=".4" stop-color="#171e27"/><stop offset="1" stop-color="#080c16"/></linearGradient>
+ <linearGradient id="red" x1="0" x2=".9" y1="0" y2="1"><stop stop-color="#ff8562"/><stop offset=".5" stop-color="#ed2b37"/><stop offset="1" stop-color="#790c28"/></linearGradient>
+ <linearGradient id="blue" x1="0" x2=".9" y1="0" y2="1"><stop stop-color="#78c6fc"/><stop offset=".4" stop-color="#0672c7"/><stop offset="1" stop-color="#083a70"/></linearGradient>
+ <linearGradient id="gold" x1="0" x2=".9" y1="0" y2="1"><stop stop-color="#fff09b"/><stop offset=".47" stop-color="#ffcc31"/><stop offset="1" stop-color="#bc540b"/></linearGradient>
+ <pattern id="crowd" width="28" height="16" patternUnits="userSpaceOnUse"><path d="M0 14L28 8" stroke="#a7c3d0" stroke-width="2" opacity=".45"/><circle cx="3" cy="8" r="2" fill="#dbe0db" opacity=".35"/><circle cx="18" cy="11" r="2.5" fill="#dcd7be" opacity=".55"/><circle cx="26" cy="4" r="2" fill="#f8f4da" opacity=".45"/></pattern>
+ <filter id="blur"><feGaussianBlur stdDeviation="9"/></filter>
+ <filter id="shadow"><feGaussianBlur stdDeviation="12"/></filter>
+ <g id="wheel"><ellipse cx="0" cy="0" rx="51" ry="66" fill="#080b0e"/><ellipse cx="0" cy="0" rx="34" ry="44" fill="#262c31" stroke="#5b6770" stroke-width="6"/><ellipse cx="0" cy="0" rx="15" ry="19" fill="#b0b5ad"/><path d="M-29 0H29M0-38V38M-20-28L20 28M20-28L-20 28" stroke="#9ea4a4" stroke-width="7"/></g>
+ <g id="car">
+  <path d="M0 151L53 116L130 93L194 37Q250 13 354 16L487 38L565 86L661 98L716 143L712 193L676 208L32 208L4 190Z" fill="url(#red)" stroke="#ffb8a3" stroke-width="5"/>
+  <path d="M169 96L213 43L359 35L473 52L526 98Z" fill="#081627" stroke="#b8e8fc" stroke-width="7"/>
+  <path d="M354 35L365 99M209 45L187 96M478 51L526 99" stroke="#f2f6ff" stroke-width="9" opacity=".65"/>
+  <path d="M535 103L660 111L699 144L539 144Z" fill="#b41020" stroke="#ff7a63" stroke-width="4"/>
+  <path d="M18 168L139 142L565 148L710 159L709 186L31 198Z" fill="#6c1323" opacity=".65"/>
+  <path d="M102 127L152 115L524 122L565 143L94 145Z" fill="#fff7eb" opacity=".86"/>
+  <path d="M23 151L72 132L80 164L16 169Z" fill="#ffeb9d"/>
+  <path d="M639 133L702 151L697 171L636 167Z" fill="#d0f1ff"/>
+  <use href="#wheel" x="152" y="188"/>
+  <use href="#wheel" x="575" y="188"/>
+  <text x="350" y="174" font-family="Arial Black,Arial,sans-serif" font-size="96" font-weight="1000" fill="#f7f5e5" stroke="#172132" stroke-width="12" paint-order="stroke" text-anchor="middle" font-style="italic">24</text>
+ </g>
+</defs>
+<rect width="1440" height="700" fill="url(#sky)"/><rect width="1440" height="700" fill="url(#glow)"/>
+<path d="M0 275L1440 220V445L0 490Z" fill="#152336"/><path d="M0 277L1440 223" stroke="#afc5d0" stroke-width="9"/>
+<path d="M0 295L1440 246V408L0 472Z" fill="url(#crowd)" opacity=".9"/>
+<path d="M0 350L1440 303M0 390L1440 347M0 432L1440 390" stroke="#9da4af" stroke-width="5" opacity=".45"/>
+<g stroke="#627e98" stroke-width="7"><path d="M190 0V348M560 0V326M1000 0V293M1330 0V280"/></g>
+<g fill="#fff3cc"><ellipse cx="190" cy="90" rx="45" ry="13"/><ellipse cx="560" cy="83" rx="45" ry="13"/><ellipse cx="1000" cy="75" rx="45" ry="13"/><ellipse cx="1330" cy="69" rx="45" ry="13"/></g>
+<g filter="url(#blur)" opacity=".44" fill="#fff6bb"><ellipse cx="190" cy="90" rx="83" ry="54"/><ellipse cx="560" cy="83" rx="83" ry="54"/><ellipse cx="1000" cy="75" rx="83" ry="54"/><ellipse cx="1330" cy="69" rx="83" ry="54"/></g>
+<path d="M0 474Q700 415 1440 439V700H0Z" fill="url(#road)"/><path d="M0 485Q700 424 1440 448" stroke="#f3f4f7" stroke-width="14" fill="none"/>
+<path d="M0 512Q700 451 1440 474" stroke="#18212b" stroke-width="45" fill="none"/>
+<path d="M0 623Q720 532 1440 567" stroke="#f3d362" stroke-width="11" fill="none" stroke-dasharray="100 60" opacity=".7"/>
+<g transform="translate(875 313) scale(.55)"><use href="#car"/></g>
+<g transform="translate(560 365) scale(.77)"><use href="#car"/><path d="M30 153L98 125L616 142" stroke="#3490e8" stroke-width="16" opacity=".9"/><text x="352" y="174" font-family="Arial Black,Arial" font-size="94" fill="#fff" stroke="#0d214a" stroke-width="9" paint-order="stroke" text-anchor="middle" font-style="italic">11</text></g>
+<g transform="translate(-62 395) scale(1.16)"><use href="#car"/><path d="M24 158L112 121L616 140" stroke="#ffde46" stroke-width="18" opacity=".9"/></g>
+<path d="M0 630L1440 576" stroke="#fff8ea" stroke-width="5" opacity=".17"/>
+<path d="M0 0H1440V700H0Z" fill="#020b1c" opacity=".12"/>
+</svg>
