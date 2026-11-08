@@ -189,39 +189,62 @@ header{position:relative;background:#010914;border-bottom:2px solid #2b86d5}
  .standings-table{font-size:.7rem}
  .chase-win-cell{font-size:.7rem}
  }
+
+/* Race Command V1.7 functionality added below existing approved design */
+.v17-shortcut{display:flex;align-items:center;flex-wrap:wrap;gap:11px;margin:14px 0;padding:15px;border:1px solid #3388d3;border-radius:14px;background:linear-gradient(100deg,#153b61,#081d31)}
+.v17-shortcut>div{flex:1;min-width:180px}.v17-shortcut p{color:#bdcfe2;font-size:.82rem;margin:6px 0}
+.v17-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.v17-heading h2{margin:13px 0 5px}
+.v17-columns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin:14px 0}
+.v17-columns>div{min-width:0}.v17-columns .card h3{margin:4px 0}.v17-columns .field{width:100%}
+#raceDayEvent{padding-top:12px}#raceDayEvent h3{font-size:1.19rem;margin:9px 0}#raceDayEvent p,#trackFacts p{font-size:.84rem;margin:7px 0;line-height:1.5}
+.v17-links{display:flex;gap:9px;flex-wrap:wrap;margin:13px 0}.v17-links a{border:1px solid #3b76ab;border-radius:9px;padding:8px 10px;background:#102a46;font-size:.79rem;text-decoration:none;color:#c3e3ff;font-weight:850}
+.v17-favorite{border:1px solid #3482c4;border-radius:10px;padding:13px;background:#0a253f;display:flex;flex-direction:column;gap:7px;margin-top:12px}
+.v17-favorite strong{color:#ffdd76;font-size:1.13rem}.v17-favorite span{font-size:.78rem;color:#c8dced}
+.v17-weather{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:12px 0}
+.v17-weather>div{border:1px solid #376f9e;border-radius:10px;background:#0d2c48;padding:12px}
+.v17-weather strong{display:block;font-size:1.35rem;color:#ffdb70}.v17-weather small{font-size:.72rem;color:#bcd3e9}
+.finish-list{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.finish-row{display:flex;gap:7px;align-items:center;border:1px solid #326797;border-radius:10px;padding:8px;background:#0b243b}
+.finish-position{min-width:30px;text-align:center;font-weight:950;color:#ffd867}.finish-row .field{min-width:0;flex:1}.finish-row .btn{min-width:35px}
+.v17-actions{display:flex;gap:9px;flex-wrap:wrap;margin:13px 0}
+.v17-calculator{margin:20px 0}.v17-calculator .v17-columns>div{padding:11px;border:1px solid #2f6999;border-radius:11px;background:#0a2339}
+.v17-calculator label{font-size:.77rem}.v17-calc-result{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:13px 0}
+.v17-calc-result>div{padding:12px;border:1px solid #367eb2;border-radius:11px;background:#11324e}.v17-calc-result b{display:block}.v17-calc-result strong{display:block;color:#ffdd71;font-size:1.44rem;margin:6px 0}
+.bottom{justify-content:flex-start;overflow-x:auto;scrollbar-width:thin}.bottom .tab{flex:1 0 65px;min-width:65px}
+@media(max-width:730px){.v17-columns{grid-template-columns:1fr}.finish-row{gap:5px;padding:6px}.finish-position{min-width:23px}.finish-row .btn{min-width:30px;padding:6px}.v17-shortcut .btn{flex:1}}
 </style></head><body>
 <div class="intro" id="welcomeIntro" role="dialog" aria-modal="true" aria-labelledby="introHeading" hidden><div class="intro-panel">
  <div class="intro-visual"><div><h2><span class="race-word">RACE</span><span class="command-word">COMMAND</span></h2><small>🏁 NASCAR · O’REILLY · TRUCKS · ARCA · MORE</small></div></div>
- <div class="intro-content"><div class="intro-kicker"><b>VERSION 1.6 · PREVIEW</b><span>Welcome aboard</span></div>
+ <div class="intro-content"><div class="intro-kicker"><b>VERSION 1.7 · PREVIEW</b><span>Welcome aboard</span></div>
  <h2 class="intro-title" id="introHeading">Your complete racing companion</h2>
  <p class="intro-desc">Follow NASCAR Cup, O’Reilly, Craftsman Trucks and ARCA from one convenient place. Explore race schedules, make predictions, and get ready for more racing features.</p>
  <div class="intro-grid"><section class="intro-box" aria-label="What it does"><h3>🏁 What It Does</h3><ul><li>Browse 2026 Championship and 2027 races</li><li>Follow Cup, O’Reilly, Trucks and ARCA</li><li>Try driver win-percentage estimates</li><li>Save personal winner picks</li><li>Open official driver and results sources</li></ul></section>
- <section class="intro-box future" aria-label="What's coming"><h3>🚀 What’s Coming</h3><ul><li>Driver statistics and season standings</li><li>Entry lists and complete race results</li><li>Private group pick’em and leaderboard</li><li>Live race-odds updates and predictions</li><li>More racing series and short tracks</li><li>Android and iPhone editions</li></ul></section></div>
+ <section class="intro-box future" aria-label="What's coming"><h3>🚀 What’s Coming</h3><ul><li>Driver statistics and season standings</li><li>Entry lists and complete race results</li><li>Private group pick’em and leaderboard</li><li>Automatic odds refresh with licensed data</li><li>More racing series and short tracks</li><li>Android and iPhone editions</li></ul></section></div>
  <div class="intro-actions"><p class="intro-signature">Designed by <strong>James Meadows</strong></p><button class="btn intro-enter" type="button" id="enterApp">ENTER APP 🏁</button></div>
  <p class="intro-footnote">Independent, unofficial racing fan app. Predictions are fan estimates, not sportsbook odds. No money betting.</p>
  </div></div></div>
 <div class="driver-modal" id="driverDetail" role="dialog" aria-modal="true" aria-labelledby="driverTitle" hidden><div class="driver-modal-panel"><div class="line"><h2 id="driverTitle">Driver profile</h2><button class="btn small" id="closeDriver">Close ✕</button></div><div id="driverBody"></div></div></div>
-<header><div class="top"><div class="brand"><div class="logo">RC</div><div>RACE COMMAND<small>Racing fan headquarters</small></div></div><span class="statuspill">UNOFFICIAL · V1.6 PREVIEW</span></div></header>
+<header><div class="top"><div class="brand"><div class="logo">RC</div><div>RACE COMMAND<small>Racing fan headquarters</small></div></div><span class="statuspill">UNOFFICIAL · V1.7 PREVIEW</span></div></header>
 <main class="wrap">
 <section class="view" id="home">
 <div class="race-showcase">
 <div class="hero-banner" role="img" aria-label="Race Command racing cars at a speedway"></div>
-<div class="race-menu"><button class="btn primary" data-tab="schedule">▦ &nbsp; Race Schedules</button><button class="btn" data-tab="drivers">🏎️ Drivers &amp; Stats</button><button class="btn" data-tab="odds">📊 Win Odds</button><button class="btn" data-tab="chase">🏆 Championship Chase</button><button class="btn" data-tab="picks">🎯 Winner Picks</button></div>
+<div class="race-menu"><button class="btn primary" data-tab="schedule">▦ &nbsp; Race Schedules</button><button class="btn" data-tab="drivers">🏎️ Drivers &amp; Stats</button><button class="btn" data-tab="odds">📊 Win Odds</button><button class="btn" data-tab="chase">🏆 Championship Chase</button><button class="btn" data-tab="raceDay">☀️ Race Day &amp; Weather</button><button class="btn" data-tab="finish">🏁 Predict the Finish</button><button class="btn" data-tab="picks">🎯 Winner Picks</button></div>
 <div class="stage-panel">
 <div class="stage-logo"><div class="stage-logo-main">🏁 RACE <em>COMMAND</em> 🏁</div><p>NASCAR · O'REILLY · TRUCKS · ARCA · AND MORE</p></div>
 <div class="three-designs">
 <section class="design-panel design-short">
 <div class="design-header">SHORT VERSION <small>Quick &amp; Straight to the Point</small></div>
-<h3 class="design-logo">RACE <em>COMMAND</em></h3><span class="version-silver">VERSION V1.6</span>
+<h3 class="design-logo">RACE <em>COMMAND</em></h3><span class="version-silver">VERSION V1.7</span>
 <h4 class="feature-title">What It Does</h4>
 <ul><li>Race schedules and details</li><li>NASCAR, O'Reilly, Trucks, ARCA</li><li>Make your winner picks</li><li>View fan win estimates</li><li>See drivers and current Chase ranks</li></ul>
 <h4 class="feature-title blue">What's Coming</h4>
-<ul><li>More complete career statistics</li><li>Entry lists and race results</li><li>Private group pick'em</li><li>More racing series</li><li>Android and iPhone editions</li></ul>
+<ul><li>Full career stats and favorite-driver alerts</li><li>Entry lists and race results</li><li>Private group pick'em</li><li>More racing series</li><li>Android and iPhone editions</li></ul>
 <p class="design-signature">Designed by <strong>James Meadows</strong></p><button class="btn race-red-button" data-tab="schedule">ENTER APP ❯</button>
 </section>
 <section class="design-panel design-bold">
 <div class="design-header">MORE EXCITING VERSION <small>Bold, High-Energy, Fan Focused</small></div>
-<h3 class="design-logo">RACE <em>COMMAND</em></h3><span class="version-silver">VERSION V1.6</span>
+<h3 class="design-logo">RACE <em>COMMAND</em></h3><span class="version-silver">VERSION V1.7</span>
 <div class="design-tagline">YOUR RACING HEADQUARTERS!</div><p class="design-desc">Schedules, drivers, odds, and picks for NASCAR, Trucks, ARCA, and more.</p>
 <h4 class="feature-title">WHAT IT DOES</h4>
 <ul><li>View race schedules</li><li>Browse Cup, Trucks, and ARCA</li><li>View the Chase standings</li><li>Check Homestead qualifying</li><li>Make winner picks</li></ul>
@@ -231,18 +254,43 @@ header{position:relative;background:#010914;border-bottom:2px solid #2b86d5}
 </section>
 <section class="design-panel design-pro">
 <div class="design-header">CLEAN &amp; PROFESSIONAL VERSION <small>Polished, Organized, Easy to Read</small></div>
-<h3 class="design-logo">RACE <em>COMMAND</em></h3><span class="version-silver">VERSION V1.6</span>
+<h3 class="design-logo">RACE <em>COMMAND</em></h3><span class="version-silver">VERSION V1.7</span>
 <p class="design-desc">A Complete Racing Companion for NASCAR Fans</p>
 <div class="design-feature-box"><h4 class="feature-title">What It Does</h4><ul><li>View race schedules and details</li><li>Follow NASCAR, O'Reilly, Trucks and ARCA</li><li>Check fan win estimates</li><li>View drivers, standings and qualifying</li><li>Make your winner picks</li></ul></div>
 <div class="design-feature-box"><h4 class="feature-title blue">What's Coming</h4><ul><li>Complete career stats and season standings</li><li>Expanded qualifying and race results</li><li>Group pick'em leaderboard</li><li>Automatic win predictions</li><li>Dirt tracks and other series</li><li>Android and iPhone editions</li></ul></div>
 <p class="design-signature">Designed by <strong>James Meadows</strong></p><button class="btn race-blue-button" data-tab="chase">ENTER APP ❯</button>
 </section></div>
-<div class="stage-bottom"><b>🏁 RACE COMMAND V1.6</b><span>WHAT'S NEW: Chase standings &amp; driver profiles</span><span>WHAT'S COMING: More stats &amp; live updates</span></div>
+<div class="stage-bottom"><b>🏁 RACE COMMAND V1.7</b><span>WHAT'S NEW: Chase standings &amp; driver profiles</span><span>WHAT'S COMING: More stats &amp; live updates</span></div>
 </div></div>
-<div class="stats"><div class="stat"><b>4</b><span>Major series</span></div><div class="stat"><b id="totalRaces">—</b><span>2026–27 events</span></div><div class="stat"><b id="totalPicks">0</b><span>My picks</span></div></div>
+<div class="v17-shortcut"><div><b>🌦️ Race Day Central</b><p>Track weather, your favorite driver, qualifying, results, and finish predictions.</p></div><button class="btn primary" data-tab="raceDay">Race Day &amp; Weather</button><button class="btn" data-tab="finish">Predict the Finish</button></div><div class="stats"><div class="stat"><b>4</b><span>Major series</span></div><div class="stat"><b id="totalRaces">—</b><span>2026–27 events</span></div><div class="stat"><b id="totalPicks">0</b><span>My picks</span></div></div>
 <h2>🏆 Championship Weekend · Nov 6–8, 2026</h2><p class="muted">Homestead-Miami Speedway · Times shown in Central Time.</p><div id="champRaces" class="cards"></div><p class="small">Official details: <a href="https://www.nascar.com/weekend-schedule/" target="_blank" rel="noopener noreferrer">NASCAR race schedule ↗</a></p>
 <h2>📅 Up next · 2027</h2><p class="muted">Upcoming events from published 2027 schedules. Times and entries will be added as announced.</p><div id="nextRaces" class="cards"></div>
 <h2>🔥 Race Fan Tools</h2><div class="featuregrid"><div class="card"><h3>📊 Odds of Winning</h3><p>Try fan-rated win probabilities, not sportsbook odds.</p><button class="btn small" data-tab="odds">Explore win odds</button></div><div class="card"><h3>🏆 Pick the Winner</h3><p>Choose your drivers. Friends group competitions are coming.</p><button class="btn small" data-tab="picks">Make a pick</button></div></div></section>
+
+<section class="view" id="raceDay" hidden>
+ <div class="v17-heading"><div><h2>☀️ Race Day Central</h2><p class="muted">Weather at the track, your favorite driver, event details, and official results.</p></div><span class="version-silver">V1.7</span></div>
+ <div class="v17-columns">
+  <div class="card"><label for="raceDayRace">Choose race</label><select class="field" id="raceDayRace"></select><div id="raceDayEvent"></div><div id="raceOfficial" class="v17-links"></div></div>
+  <div class="card"><h3>⭐ Favorite Driver</h3><p class="small">Choose once and Race Command remembers your driver on this phone.</p><label for="favoriteDriver">My favorite driver</label><select class="field" id="favoriteDriver"></select><div id="favoriteSummary"></div></div>
+ </div>
+ <div class="v17-columns">
+  <div class="card"><h3>🏟️ Track Headquarters</h3><div id="trackFacts"></div><div id="trackMapLinks" class="v17-links"></div></div>
+  <div class="card"><h3>🌦️ Track Weather</h3><div id="raceWeather" aria-live="polite">Select a race for weather.</div><button class="btn small" id="refreshWeather" type="button">↻ Refresh weather</button><p class="small">Weather from Open-Meteo. Current conditions plus race-day outlook when the date is within the forecast range. Conditions can change; forecasts aren't decisions about race delays.</p></div>
+ </div>
+ <div class="card"><h3>🏎️ More Race Day Tools</h3><div class="v17-links"><button class="btn" data-tab="drivers">Drivers &amp; Win Chances</button><button class="btn" data-tab="finish">Predict the Finish</button><button class="btn" data-tab="chase">Chase Standings</button></div><p class="small">We link to official results and qualifying; we do not currently stream live NASCAR timing.</p></div>
+</section>
+<section class="view" id="finish" hidden>
+ <div class="v17-heading"><div><h2>🏁 Predict the Finish</h2><p class="muted">Put the drivers in the order you think they'll finish. Reorder and save your picks as often as you like—right up to the verified race start time.</p></div><span class="version-silver">V1.7</span></div>
+ <div class="card">
+  <label for="finishRace">Choose race</label><select class="field" id="finishRace"></select>
+  <p class="small" id="finishRaceNote"></p>
+  <div class="v17-actions"><button class="btn small" id="projectFinish" type="button">📊 Start with race-win odds order</button><button class="btn small dim" id="clearFinish" type="button">Clear picks</button></div>
+  <p class="small">Tap ↑ or ↓ to move a driver. The odds-based starting order is only a suggestion; it is not a prediction of the actual result.</p>
+  <datalist id="finishDriversList"></datalist><div id="finishList" class="finish-list"></div>
+  <div class="v17-actions"><button class="btn small" id="addFinish" type="button">+ Add position</button><button class="btn small dim" id="removeFinish" type="button">− Remove last</button><button class="btn primary" id="saveFinish" type="button">💾 Save predicted order</button></div><p id="finishStatus" class="small" role="status"></p>
+ </div>
+ <div class="notice">Finishing-order picks are saved locally on this phone; they aren't shared to other devices or to friends yet. For confirmed start times, Race Command locks editing at the scheduled start. When no official start time is available, future-race picks remain previews.</div>
+</section>
 <section class="view" id="schedule" hidden><h2>🏁 2026–27 Race Schedule</h2><p class="muted">Includes November 6–8, 2026 Championship Weekend plus published 2027 NASCAR and ARCA dates. All displayed race times are Central Time; remaining times TBA.</p><div class="chips" id="seriesFilter"><button class="chip active" data-series="All">All</button><button class="chip" data-series="Cup">Cup</button><button class="chip" data-series="OReilly">O'Reilly</button><button class="chip" data-series="Truck">Trucks</button><button class="chip" data-series="ARCA">ARCA</button></div><div class="toolbar"><input class="field" id="raceSearch" type="search" placeholder="Search track, race or month…" aria-label="Search races"></div><p class="muted" id="scheduleCount"></p><div id="scheduleCards" class="cards"></div></section>
 <section class="view" id="odds" hidden><h2>📊 Odds of Winning</h2><p class="muted">Create your own driver win-probability estimates for a race. Real sportsbook odds and verified live predictions require a licensed data feed.</p><div class="notice"><strong>Important:</strong> These are experimental, user-entered <strong>fan estimates</strong> — NOT real betting odds or factual forecasts. The model compares each driver with an average remaining field. Entry lists and performance scores are not loaded automatically.</div>
 <div class="two"><div class="card"><h3>Set up a race</h3><label for="oddsRace">Race</label><select class="field" id="oddsRace"></select><label for="fieldSize">Expected field size</label><select class="field" id="fieldSize"><option>36</option><option selected>40</option><option>32</option><option>30</option><option>25</option><option>20</option></select><p class="small">Choose a field size appropriate for the series; confirmed fields can change.</p></div>
@@ -264,12 +312,22 @@ header{position:relative;background:#010914;border-bottom:2px solid #2b86d5}
 <div class="chase-key"><span><i class="key-dot active"></i> Title eligible</span><span><i class="key-dot elim"></i> Out of title contention</span></div>
 <div class="standings-wrap"><table class="standings-table"><thead><tr><th>Pos.</th><th>Driver</th><th>Pts</th><th>Behind</th><th>Race win</th></tr></thead><tbody id="chaseRows"></tbody></table></div>
 <p class="small" style="margin:13px 0">Points and order: <a href="https://www.nascar.com/news-media/2026/11/02/the-chase-report-presented-by-mobil-1-where-we-stand-after-martinsville/" target="_blank" rel="noopener noreferrer">NASCAR Chase Report ↗</a> · <a href="https://www.jayski.com/nascar-cup-series/2026-nascar-cup-series-fall-martinsville-race-page/" target="_blank" rel="noopener noreferrer">Jayski points table ↗</a>.</p>
-<button class="btn primary" data-tab="drivers">🏎️ Meet the Chase drivers</button>
+<button class="btn primary" data-tab="drivers">🏎️ Meet the Chase drivers</button><section id="chaseCalculator" class="card v17-calculator">
+<h3>🧮 Championship Points Calculator</h3><p class="muted">Choose two Chase drivers, finishing positions, stage points and fastest-lap bonuses. This is a what-if comparison using November 1 points, not an official forecast.</p>
+<div class="v17-columns"><div>
+<label for="calcDriverA">Driver A</label><select class="field" id="calcDriverA"></select><label for="calcFinishA">Finish place</label><select class="field" id="calcFinishA"></select>
+<label for="calcStage1A">Stage 1 points</label><select class="field" id="calcStage1A"></select><label for="calcStage2A">Stage 2 points</label><select class="field" id="calcStage2A"></select><label for="calcBonusA">Fastest-lap bonus</label><select class="field" id="calcBonusA"><option value="0">0</option><option value="1">1</option></select>
+</div><div>
+<label for="calcDriverB">Driver B</label><select class="field" id="calcDriverB"></select><label for="calcFinishB">Finish place</label><select class="field" id="calcFinishB"></select>
+<label for="calcStage1B">Stage 1 points</label><select class="field" id="calcStage1B"></select><label for="calcStage2B">Stage 2 points</label><select class="field" id="calcStage2B"></select><label for="calcBonusB">Fastest-lap bonus</label><select class="field" id="calcBonusB"><option value="0">0</option><option value="1">1</option></select>
+</div></div><div id="calcResult" aria-live="polite"></div>
+<p class="small">2026 rules: 55 points for a race win, 35 for second, then 34 for third, plus stage points and a potential fastest-lap point. <a href="https://www.nascar.com/news-media/2026/08/31/the-chase-101-how-nascars-new-championship-format-works/" target="_blank" rel="noopener noreferrer">Official NASCAR scoring ↗</a>.</p>
+</section>
 </section>
 <section class="view" id="stats" hidden><h2>📈 Drivers & Statistics</h2><p class="muted">Use verified official sources for up-to-date drivers, standings, results and entry lists. We won't invent statistics or unannounced 2027 lineups.</p><div class="card" id="statsLinks"><div class="resource"><div><b>NASCAR official standings</b><small>Cup, O'Reilly, Truck championship tables</small></div><a class="outlink" target="_blank" rel="noopener noreferrer" href="https://www.nascar.com/standings/">View ↗</a></div><div class="resource"><div><b>NASCAR driver directory</b><small>Profiles and career information</small></div><a class="outlink" target="_blank" rel="noopener noreferrer" href="https://www.nascar.com/drivers/">View ↗</a></div><div class="resource"><div><b>NASCAR results</b><small>Race finishing positions and news</small></div><a class="outlink" target="_blank" rel="noopener noreferrer" href="https://www.nascar.com/results/">View ↗</a></div><div class="resource"><div><b>ARCA schedule & results</b><small>ARCA Menards Series race details</small></div><a class="outlink" target="_blank" rel="noopener noreferrer" href="https://www.arcaracing.com/arca-menards-series/">View ↗</a></div></div><h2>📢 Sources & data</h2><p class="muted">The 2026 Championship Weekend schedule was checked against official NASCAR listings; 2027 dates were transcribed from official NASCAR and ARCA announcements. Schedules are not automatically updated in this preview.</p><div class="card"><div class="resource"><a href="https://www.nascar.com/news-media/2026/08/26/2027-nascar-schedule-confirmed-dates-tracks-for-all-three-national-series/" target="_blank" rel="noopener noreferrer">2027 NASCAR national series schedule ↗</a></div><div class="resource"><a href="https://www.arcaracing.com/2026/10/13/2027-arca-menards-series-schedule/" target="_blank" rel="noopener noreferrer">2027 ARCA schedule ↗</a></div></div></section>
-<footer class="footer"><span class="footer-credit">Designed by James Meadows</span>Race Command · Independent, unofficial fan project · Not affiliated with or endorsed by NASCAR or ARCA.<br>All marks belong to their respective owners. No wagering or money handling. V1.6 test build.</footer>
+<footer class="footer"><span class="footer-credit">Designed by James Meadows</span>Race Command · Independent, unofficial fan project · Not affiliated with or endorsed by NASCAR or ARCA.<br>All marks belong to their respective owners. No wagering or money handling. V1.7 test build.</footer>
 </main>
-<nav class="bottom" aria-label="Main sections"><button class="tab active" data-tab="home"><i>🏠</i>Home</button><button class="tab" data-tab="schedule"><i>🏁</i>Races</button><button class="tab" data-tab="drivers"><i>🏎️</i>Drivers</button><button class="tab" data-tab="chase"><i>🏆</i>Chase</button><button class="tab" data-tab="picks"><i>🎯</i>Picks</button><button class="tab" data-tab="odds"><i>📊</i>Odds</button></nav>
+<nav class="bottom" aria-label="Main sections"><button class="tab active" data-tab="home"><i>🏠</i>Home</button><button class="tab" data-tab="schedule"><i>🏁</i>Races</button><button class="tab" data-tab="drivers"><i>🏎️</i>Drivers</button><button class="tab" data-tab="chase"><i>🏆</i>Chase</button><button class="tab" data-tab="raceDay"><i>☀️</i>Weather</button><button class="tab" data-tab="finish"><i>🏁</i>Finish</button><button class="tab" data-tab="picks"><i>🎯</i>Picks</button><button class="tab" data-tab="odds"><i>📊</i>Odds</button></nav>
 <script>
 const DATA = "Cup|02-13|Wheatley Vodka Clash|Daytona International Speedway\nCup|02-18|Duel at Daytona|Daytona International Speedway\nCup|02-21|Daytona 500|Daytona International Speedway\nCup|02-28|Autotrader 400|EchoPark Speedway\nCup|03-07|DuraMAX Texas Grand Prix|Circuit of The Americas\nCup|03-14|Phoenix Raceway|Phoenix Raceway\nCup|03-21|Las Vegas Motor Speedway|Las Vegas Motor Speedway\nCup|04-04|Darlington Raceway|Darlington Raceway\nCup|04-11|Bristol Motor Speedway|Bristol Motor Speedway\nCup|04-18|Cook Out 400|Martinsville Speedway\nCup|04-25|Jack Link's 500|Talladega Superspeedway\nCup|05-02|Würth 400|Texas Motor Speedway\nCup|05-09|Kansas Speedway|Kansas Speedway\nCup|05-16|Dover Motor Speedway|Dover Motor Speedway\nCup|05-23|All-Star Race|North Wilkesboro Speedway\nCup|05-30|Coca-Cola 600|Charlotte Motor Speedway\nCup|06-06|Nashville Superspeedway|Nashville Superspeedway\nCup|06-13|Great American Getaway 400|Pocono Raceway\nCup|06-20|Michigan International Speedway|Michigan International Speedway\nCup|06-27|Chicagoland Speedway|Chicagoland Speedway\nCup|07-04|Iowa Speedway|Iowa Speedway\nCup|07-11|Toyota/Save Mart 350|Sonoma Raceway\nCup|07-18|Dollar Tree 400|EchoPark Speedway\nCup|07-25|Brickyard 400|Indianapolis Motor Speedway\nCup|08-01|Naval Base Coronado|Naval Base Coronado\nCup|08-14|Bass Pro Shops Night Race|Bristol Motor Speedway\nCup|08-22|Enjoy Illinois 300|World Wide Technology Raceway\nCup|08-28|Coke Zero Sugar 400|Daytona International Speedway\nCup|09-05|Southern 500|Darlington Raceway\nCup|09-11|Richmond Raceway|Richmond Raceway\nCup|09-19|Watkins Glen International|Watkins Glen International\nCup|09-26|New Hampshire Motor Speedway|New Hampshire Motor Speedway\nCup|10-03|Kansas Speedway|Kansas Speedway\nCup|10-10|Las Vegas Motor Speedway|Las Vegas Motor Speedway\nCup|10-17|Charlotte Motor Speedway|Charlotte Motor Speedway\nCup|10-24|Freeway Insurance 500|Phoenix Raceway\nCup|10-31|YellaWood 500|Talladega Superspeedway\nCup|11-07|Xfinity 500|Martinsville Speedway\nCup|11-14|Homestead-Miami Speedway|Homestead-Miami Speedway\nOReilly|02-20|United Rentals 300|Daytona International Speedway\nOReilly|02-27|Bennett Transportation 250|EchoPark Speedway\nOReilly|03-06|Circuit of The Americas|Circuit of The Americas\nOReilly|03-13|Phoenix Raceway|Phoenix Raceway\nOReilly|03-20|Las Vegas Motor Speedway|Las Vegas Motor Speedway\nOReilly|04-03|Darlington Raceway|Darlington Raceway\nOReilly|04-10|Bristol Motor Speedway|Bristol Motor Speedway\nOReilly|04-17|Martinsville Speedway|Martinsville Speedway\nOReilly|04-24|Talladega Superspeedway|Talladega Superspeedway\nOReilly|05-01|Texas Motor Speedway|Texas Motor Speedway\nOReilly|05-15|Dover Motor Speedway|Dover Motor Speedway\nOReilly|05-22|North Wilkesboro Speedway|North Wilkesboro Speedway\nOReilly|05-29|Charlotte Motor Speedway|Charlotte Motor Speedway\nOReilly|06-05|Nashville Superspeedway|Nashville Superspeedway\nOReilly|06-12|Pocono Raceway|Pocono Raceway\nOReilly|06-26|Chicagoland Speedway|Chicagoland Speedway\nOReilly|07-03|Iowa Speedway|Iowa Speedway\nOReilly|07-10|Sonoma Raceway|Sonoma Raceway\nOReilly|07-24|Indianapolis Motor Speedway|Indianapolis Motor Speedway\nOReilly|07-31|Naval Base Coronado|Naval Base Coronado\nOReilly|08-13|Bristol Motor Speedway|Bristol Motor Speedway\nOReilly|08-21|Nu Way 225|World Wide Technology Raceway\nOReilly|08-27|Daytona International Speedway|Daytona International Speedway\nOReilly|09-04|Darlington Raceway|Darlington Raceway\nOReilly|09-10|Richmond Raceway|Richmond Raceway\nOReilly|09-18|Watkins Glen International|Watkins Glen International\nOReilly|10-02|Kansas Speedway|Kansas Speedway\nOReilly|10-09|Las Vegas Motor Speedway|Las Vegas Motor Speedway\nOReilly|10-16|Charlotte Motor Speedway|Charlotte Motor Speedway\nOReilly|10-23|Phoenix Raceway|Phoenix Raceway\nOReilly|10-30|Talladega Superspeedway|Talladega Superspeedway\nOReilly|11-06|Martinsville Speedway|Martinsville Speedway\nOReilly|11-13|Homestead-Miami Speedway|Homestead-Miami Speedway\nTruck|02-19|Fresh From Florida 250|Daytona International Speedway\nTruck|02-27|EchoPark Speedway|EchoPark Speedway\nTruck|03-06|Streets of St. Petersburg|Streets of St. Petersburg\nTruck|04-02|Darlington Raceway|Darlington Raceway\nTruck|04-09|Bristol Motor Speedway|Bristol Motor Speedway\nTruck|04-30|Texas Motor Speedway|Texas Motor Speedway\nTruck|05-08|Kansas Speedway|Kansas Speedway\nTruck|05-21|North Wilkesboro Speedway|North Wilkesboro Speedway\nTruck|05-28|Charlotte Motor Speedway|Charlotte Motor Speedway\nTruck|06-04|Nashville Superspeedway|Nashville Superspeedway\nTruck|06-11|MillerTech Battery 200|Pocono Raceway\nTruck|06-19|Michigan International Speedway|Michigan International Speedway\nTruck|07-10|Lime Rock Park|Lime Rock Park\nTruck|07-17|EchoPark Speedway|EchoPark Speedway\nTruck|07-23|Lucas Oil Indianapolis Raceway Park|Lucas Oil Indianapolis Raceway Park\nTruck|08-12|Bristol Motor Speedway|Bristol Motor Speedway\nTruck|08-20|Bowman Gray Stadium|Bowman Gray Stadium\nTruck|09-05|Canadian Tire Motorsport Park|Canadian Tire Motorsport Park\nTruck|09-25|EJP 175|New Hampshire Motor Speedway\nTruck|10-01|Kansas Speedway|Kansas Speedway\nTruck|10-15|Charlotte Motor Speedway|Charlotte Motor Speedway\nTruck|10-22|Phoenix Raceway|Phoenix Raceway\nTruck|10-29|Talladega Superspeedway|Talladega Superspeedway\nTruck|11-05|Martinsville Speedway|Martinsville Speedway\nTruck|11-12|Homestead-Miami Speedway|Homestead-Miami Speedway\nARCA|02-20|Daytona ARCA 200|Daytona International Speedway\nARCA|03-12|Phoenix Raceway|Phoenix Raceway\nARCA|04-24|Talladega Superspeedway|Talladega Superspeedway\nARCA|05-08|Kansas Speedway|Kansas Speedway\nARCA|05-15|Toledo Speedway|Toledo Speedway\nARCA|06-05|Berlin Raceway|Berlin Raceway\nARCA|06-12|Elko Raceway|Elko Raceway\nARCA|06-18|Michigan International Speedway|Michigan International Speedway\nARCA|06-25|Chicagoland Speedway|Chicagoland Speedway\nARCA|07-02|Iowa Speedway|Iowa Speedway\nARCA|07-10|Lime Rock Park|Lime Rock Park\nARCA|07-23|Lucas Oil Indianapolis Raceway Park|Lucas Oil Indianapolis Raceway Park\nARCA|08-08|Illinois State Fairgrounds|Illinois State Fairgrounds\nARCA|08-12|Bristol Motor Speedway|Bristol Motor Speedway\nARCA|08-20|World Wide Technology Raceway|World Wide Technology Raceway\nARCA|08-27|Madison International Speedway|Madison International Speedway\nARCA|09-05|DuQuoin State Fairgrounds|DuQuoin State Fairgrounds\nARCA|09-17|Watkins Glen International|Watkins Glen International\nARCA|09-25|Salem Speedway|Salem Speedway\nARCA|10-01|Kansas Speedway|Kansas Speedway";
 const CHAMPIONSHIP=[{"id":"2026-truck-champ","series":"Truck","date":"2026-11-06","name":"NASCAR Craftsman Truck Series Championship Race","track":"Homestead-Miami Speedway","timeCT":"6:30 PM CT","tv":"FS1"},{"id":"2026-oreilly-champ","series":"OReilly","date":"2026-11-07","name":"NASCAR O'Reilly Auto Parts Series Championship Race","track":"Homestead-Miami Speedway","timeCT":"4:00 PM CT","tv":"The CW"},{"id":"2026-cup-champ","series":"Cup","date":"2026-11-08","name":"NASCAR Cup Series Championship Race","track":"Homestead-Miami Speedway","timeCT":"2:00 PM CT","tv":"NBC"}];
@@ -284,7 +342,7 @@ const $=id=>document.getElementById(id),esc=v=>String(v).replace(/[&<>"']/g,c=>(
 const pretty=d=>new Date(d+'T12:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric',weekday:'short'});
 const seriesPill=s=>'<span class="pill '+(s==='OReilly'?'oreilly':s==='Truck'?'truck':s==='ARCA'?'arca':'')+'">'+esc(names[s])+'</span>';
 const raceWhen=r=>r.timeCT ? r.timeCT+' · '+r.tv : 'Time: TBA';
-function showTab(s){document.querySelectorAll('.view').forEach(el=>el.hidden=el.id!==s);document.querySelectorAll('.bottom [data-tab]').forEach(el=>el.classList.toggle('active',el.dataset.tab===s));window.scrollTo(0,0);if(s==='schedule')renderSchedule();if(s==='odds')renderOdds();if(s==='picks')renderPicks();if(s==='drivers')renderDrivers();if(s==='chase')renderChase();}
+function showTab(s){document.querySelectorAll('.view').forEach(el=>el.hidden=el.id!==s);document.querySelectorAll('.bottom [data-tab]').forEach(el=>el.classList.toggle('active',el.dataset.tab===s));window.scrollTo(0,0);if(s==='schedule')renderSchedule();if(s==='odds')renderOdds();if(s==='picks')renderPicks();if(s==='drivers')renderDrivers();if(s==='chase')renderChase();if(s==='raceDay')renderRaceDay();if(s==='finish')renderFinish();}
 document.addEventListener('click',e=>{let el=e.target.closest('[data-tab]');if(el)showTab(el.dataset.tab);});
 function raceCard(r){return '<div class="card"><div class="line">'+seriesPill(r.series)+'<span class="date">'+pretty(r.date)+'</span></div><h3>'+esc(r.name)+'</h3><p>📍 '+esc(r.track)+'</p><div class="line"><span class="small">'+esc(raceWhen(r))+'</span><button class="btn small dim" data-race="'+r.id+'">Win odds →</button></div></div>';}
 document.addEventListener('click',e=>{let el=e.target.closest('[data-race]');if(el){$('oddsRace').value=el.dataset.race;showTab('odds');}});
@@ -368,9 +426,168 @@ $('driverDetail').addEventListener('click',e=>{if(e.target.id==='driverDetail')e
 document.addEventListener('keydown',e=>{if(e.key==='Escape')$('driverDetail').hidden=true});
 renderDrivers();renderChase();
 
-/* V1.5 splash / version guide. */
+/* Race Day / Weather / Predict the Finish / Chase Simulator — V1.7 */
+const V17_KEY='race_command_v17';
+const raceById=Object.fromEntries(races.map(r=>[r.id,r]));
+const racePickerOptions=races.map(r=>'<option value="'+r.id+'">'+esc(pretty(r.date)+' · '+names[r.series]+' · '+r.track)+'</option>').join('');
+const nextRace=races.find(r=>r.date>=centralDay())||races[races.length-1];
+$('raceDayRace').innerHTML=racePickerOptions; $('raceDayRace').value=nextRace.id;
+$('finishRace').innerHTML=racePickerOptions; $('finishRace').value=nextRace.id;
+let favoriteDriverName=String(readStore(V17_KEY+'_favorite').name||'');
+$('favoriteDriver').innerHTML='<option value="">Choose your favorite…</option>'+RACE_FIELD.slice().sort((a,b)=>a.name.localeCompare(b.name)).map(d=>'<option value="'+esc(d.name)+'">#'+d.car+' '+esc(d.name)+'</option>').join('');
+if(RACE_BY_NAME[favoriteDriverName])$('favoriteDriver').value=favoriteDriverName;else favoriteDriverName='';
+function renderFavorite(){
+ const d=RACE_BY_NAME[favoriteDriverName],c=driverByName[favoriteDriverName];
+ $('favoriteSummary').innerHTML=d?'<div class="v17-favorite"><strong>#'+d.car+' '+esc(d.name)+'</strong><span>'+esc(d.team)+'</span><span>'+(c?'Chase position #'+c.rank+' · '+c.points.toLocaleString('en-US')+' pts':'Not in the 2026 Cup Chase 16')+'</span><span>Homestead win estimate: '+pct(d)+' (published odds as of Nov 5)</span><button class="btn small" data-driver="'+esc(d.name)+'">Driver details</button></div>':'<div class="empty">Choose a driver above to save your favorite on this phone.</div>';
+}
+$('favoriteDriver').addEventListener('change',()=>{favoriteDriverName=$('favoriteDriver').value;saveStore(V17_KEY+'_favorite',{name:favoriteDriverName});renderFavorite()});
+renderFavorite();
+const TRACK_LOCATIONS={
+ 'Homestead-Miami Speedway':['Homestead','Florida',25.451,-80.408,'1.5-mile oval','18–20° turns'],
+ 'Daytona International Speedway':['Daytona Beach','Florida',29.185,-81.070,'2.5-mile oval','31° turns'],
+ 'Talladega Superspeedway':['Talladega','Alabama',33.567,-86.066,'2.66-mile oval','33° turns'],
+ 'Bristol Motor Speedway':['Bristol','Tennessee',36.515,-82.256,'0.533-mile oval',''],
+ 'Charlotte Motor Speedway':['Concord','North Carolina',35.351,-80.683,'1.5-mile oval','24° turns'],
+ 'Martinsville Speedway':['Martinsville','Virginia',36.633,-79.852,'0.526-mile oval',''],
+ 'Darlington Raceway':['Darlington','South Carolina',34.295,-79.904,'1.366-mile oval',''],
+ 'Phoenix Raceway':['Avondale','Arizona',33.374,-112.312,'1-mile oval',''],
+ 'Las Vegas Motor Speedway':['Las Vegas','Nevada',36.272,-115.011,'1.5-mile oval',''],
+ 'Texas Motor Speedway':['Fort Worth','Texas',33.037,-97.283,'1.5-mile oval',''],
+ 'Kansas Speedway':['Kansas City','Kansas',39.116,-94.831,'1.5-mile oval',''],
+ 'Pocono Raceway':['Long Pond','Pennsylvania',41.055,-75.512,'2.5-mile triangular oval',''],
+ 'Richmond Raceway':['Richmond','Virginia',37.592,-77.420,'0.75-mile oval',''],
+ 'Dover Motor Speedway':['Dover','Delaware',39.190,-75.531,'1-mile oval',''],
+ 'Nashville Superspeedway':['Lebanon','Tennessee',36.045,-86.404,'1.33-mile oval',''],
+ 'EchoPark Speedway':['Hampton','Georgia',33.384,-84.317,'1.54-mile oval',''],
+ 'Michigan International Speedway':['Brooklyn','Michigan',42.066,-84.241,'2-mile oval',''],
+ 'Iowa Speedway':['Newton','Iowa',41.673,-93.015,'0.875-mile oval',''],
+ 'Indianapolis Motor Speedway':['Speedway','Indiana',39.795,-86.235,'2.5-mile oval',''],
+ 'Sonoma Raceway':['Sonoma','California',38.162,-122.455,'Road course',''],
+ 'Watkins Glen International':['Watkins Glen','New York',42.335,-76.927,'Road course',''],
+ 'Circuit of The Americas':['Austin','Texas',30.133,-97.641,'Road course',''],
+ 'North Wilkesboro Speedway':['North Wilkesboro','North Carolina',36.142,-81.074,'0.625-mile oval',''],
+ 'Chicagoland Speedway':['Joliet','Illinois',41.474,-88.057,'1.5-mile oval',''],
+ 'World Wide Technology Raceway':['Madison','Illinois',38.650,-90.137,'1.25-mile oval',''],
+ 'Lime Rock Park':['Lakeville','Connecticut',41.928,-73.380,'Road course',''],
+ 'Lucas Oil Indianapolis Raceway Park':['Brownsburg','Indiana',39.811,-86.342,'0.686-mile oval',''],
+ 'Bowman Gray Stadium':['Winston-Salem','North Carolina',36.082,-80.221,'0.25-mile oval',''],
+ 'Streets of St. Petersburg':['St. Petersburg','Florida',27.766,-82.630,'Street course',''],
+ 'Naval Base Coronado':['Coronado','California',32.685,-117.185,'Street course',''],
+ 'Canadian Tire Motorsport Park':['Bowmanville','Ontario',44.048,-78.676,'Road course','']
+};
+function raceLinks(r){return r.series==='ARCA'?['https://www.arcaracing.com/arca-menards-series/','https://www.arcaracing.com/arca-menards-series/','https://www.arcaracing.com/arca-menards-series/']:['https://www.nascar.com/schedule/','https://www.nascar.com/results/','https://www.nascar.com/results/']}
+function renderRaceEvent(r){
+ const info=TRACK_LOCATIONS[r.track], links=raceLinks(r);
+ $('raceDayEvent').innerHTML='<span class="pill">'+esc(names[r.series])+'</span><h3>'+esc(r.name)+'</h3><p>📆 '+pretty(r.date)+'</p><p>📍 '+esc(r.track)+'</p><p>🕒 '+esc(raceWhen(r))+'</p>';
+ $('raceOfficial').innerHTML='<a href="'+links[0]+'" target="_blank" rel="noopener noreferrer">Official schedule ↗</a><a href="'+links[1]+'" target="_blank" rel="noopener noreferrer">Official results ↗</a><a href="'+links[2]+'" target="_blank" rel="noopener noreferrer">Qualifying / grid ↗</a>';
+ $('trackFacts').innerHTML='<p><strong>Track:</strong> '+esc(r.track)+'</p>'+(info?'<p><strong>Area:</strong> '+esc(info[0]+', '+info[1])+'</p><p><strong>Type:</strong> '+esc(info[4])+'</p>'+(info[5]?'<p><strong>Banking:</strong> '+esc(info[5])+'</p>':''):'<p class="small">Track details are being added.</p>');
+ $('trackMapLinks').innerHTML='<a href="https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(r.track)+'" target="_blank" rel="noopener noreferrer">📍 Directions ↗</a>';
+}
+const cardinal=degrees=>{const n=Math.round(Number(degrees)/45)&7;return ['N','NE','E','SE','S','SW','W','NW'][n]};
+const forecastNumber=(n,units)=>n===null||n===undefined||!Number.isFinite(Number(n))?'—':Math.round(Number(n))+units;
+let activeWeatherCall=0;
+async function renderWeather(){
+ const r=raceById[$('raceDayRace').value],el=$('raceWeather'),call=++activeWeatherCall;
+ if(!r)return;
+ const coord=TRACK_LOCATIONS[r.track];
+ if(!coord){el.innerHTML='<p class="muted">Forecast is not yet configured for this track. Check the race organizer\'s local weather information.</p>';return}
+ const gap=Math.round((Date.parse(r.date+'T12:00:00Z')-Date.parse(centralDay()+'T12:00:00Z'))/86400000);
+ el.textContent='Checking current weather near '+coord[0]+'…';
+ try{
+  const endpoint='https://api.open-meteo.com/v1/forecast?latitude='+coord[2]+'&longitude='+coord[3]+'&current=temperature_2m,apparent_temperature,weather_code,wind_speed_10m,wind_direction_10m&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,wind_speed_10m_max&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=auto&forecast_days=16';
+  const response=await fetch(endpoint,{cache:'no-store'});
+  if(!response.ok)throw Error('Weather service returned '+response.status);
+  const data=await response.json();
+  if(call!==activeWeatherCall)return;
+  const cur=data.current||{},ix=(data.daily?.time||[]).indexOf(r.date);
+  const current='<h4>Current conditions near '+esc(coord[0])+'</h4><div class="v17-weather"><div><strong>'+forecastNumber(cur.temperature_2m,'°F')+'</strong><small>Temperature</small></div><div><strong>'+forecastNumber(cur.apparent_temperature,'°F')+'</strong><small>Feels like</small></div><div><strong>'+forecastNumber(cur.wind_speed_10m,' mph')+'</strong><small>Wind speed</small></div><div><strong>'+((cur.wind_direction_10m==null)?'—':cardinal(cur.wind_direction_10m))+'</strong><small>Wind direction</small></div></div>';
+  let future='';
+  if(ix>=0){
+    const d=data.daily;
+    future='<h4>Forecast for '+esc(pretty(r.date))+'</h4><div class="v17-weather"><div><strong>'+forecastNumber(d.temperature_2m_max[ix],'°F')+'</strong><small>High</small></div><div><strong>'+forecastNumber(d.temperature_2m_min[ix],'°F')+'</strong><small>Low</small></div><div><strong>'+forecastNumber(d.precipitation_probability_max[ix],'%')+'</strong><small>Rain chance</small></div><div><strong>'+forecastNumber(d.wind_speed_10m_max[ix],' mph')+'</strong><small>Max wind</small></div></div>';
+  } else if(gap<0) future='<p class="small">Race date has passed. Current weather above is not historical race-day weather.</p>';
+  else future='<p class="small">Race forecast is not available yet. Check back within 16 days of this event.</p>';
+  el.innerHTML=current+future+'<p class="small">Current conditions and forecast: <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo ↗</a>. Approximate track-area weather only.</p>';
+ }catch(e){if(call===activeWeatherCall)el.innerHTML='<p class="muted">Weather service unavailable right now. You can refresh it again, or visit <a href="https://www.weather.gov/" target="_blank" rel="noopener noreferrer">weather.gov</a>.</p>'}
+}
+function renderRaceDay(){const r=raceById[$('raceDayRace').value];if(!r)return;renderRaceEvent(r);renderFavorite();renderWeather()}
+$('raceDayRace').addEventListener('change',renderRaceDay);
+$('refreshWeather').addEventListener('click',renderWeather);
+const FINISH_KEY=V17_KEY+'_finish';
+const finishStore=readStore(FINISH_KEY);let finishDraft=[];
+const currentFinishRace=()=>raceById[$('finishRace').value];
+const isHomesteadCup=r=>r?.date==='2026-11-08'&&r?.series==='Cup';
+const knownRaceStart=r=>isHomesteadCup(r)?new Date('2026-11-08T14:00:00-06:00').getTime():r?.date==='2026-11-07'&&r?.series==='OReilly'?new Date('2026-11-07T16:00:00-06:00').getTime():r?.date==='2026-11-06'&&r?.series==='Truck'?new Date('2026-11-06T18:30:00-06:00').getTime():null;
+function finishLocked(r){if(!r)return true;const time=knownRaceStart(r);return time!==null?Date.now()>=time:r.date<centralDay()}
+function renderFinish(){
+ const r=currentFinishRace();if(!r)return;
+ const known=isHomesteadCup(r),locked=finishLocked(r),start=knownRaceStart(r);
+ $('finishRaceNote').textContent=(known?'Verified 40-driver Homestead Cup entry list.':'Future race driver lists may not be final; manually enter names.')+' '+(start!==null?'Picks lock at race start ('+raceWhen(r)+').':'Start time not confirmed. This is a planning preview.')+(locked?' PICKS LOCKED.':'');
+ $('finishDriversList').innerHTML=known?RACE_FIELD.map(d=>'<option value="'+esc(d.name)+'"></option>').join(''):'';
+ $('finishList').innerHTML=finishDraft.map((v,i)=>'<div class="finish-row"><span class="finish-position">'+(i+1)+'</span><input class="field" aria-label="Driver at finishing position '+(i+1)+'" data-finish-input="'+i+'" '+(known?'list="finishDriversList"':'')+' value="'+esc(v)+'" placeholder="Driver for position '+(i+1)+'" maxlength="65" '+(locked?'disabled':'')+'><button class="btn small dim" data-finish-move="up" data-finish-i="'+i+'" '+(i===0||locked?'disabled':'')+' aria-label="Move up">↑</button><button class="btn small dim" data-finish-move="down" data-finish-i="'+i+'" '+(i===finishDraft.length-1||locked?'disabled':'')+' aria-label="Move down">↓</button></div>').join('');
+ $('projectFinish').disabled=locked||!known;
+ $('clearFinish').disabled=locked;
+ $('addFinish').disabled=locked||finishDraft.length>=40;
+ $('removeFinish').disabled=locked||finishDraft.length<=1;
+ $('saveFinish').disabled=locked;
+}
+function loadFinish(){
+ const r=currentFinishRace();if(!r)return;
+ const saved=Array.isArray(finishStore[r.id])?finishStore[r.id].filter(x=>typeof x==='string').slice(0,40):[];
+ finishDraft=saved.length?saved.concat(Array(Math.max(0,10-saved.length)).fill('')):Array(10).fill('');
+ $('finishStatus').textContent=saved.length?'Your previously saved predicted order is loaded.':'Choose your predicted finishing order.';
+ renderFinish();
+}
+$('finishRace').addEventListener('change',loadFinish);
+$('finishList').addEventListener('input',e=>{const n=Number(e.target.dataset.finishInput);if(Number.isInteger(n)&&n>=0&&n<finishDraft.length){finishDraft[n]=e.target.value;$('finishStatus').textContent='Unsaved edits.'}});
+$('finishList').addEventListener('click',e=>{
+ const b=e.target.closest('[data-finish-move]');if(!b||finishLocked(currentFinishRace()))return;
+ const i=Number(b.dataset.finishI),j=i+(b.dataset.finishMove==='up'?-1:1);if(j<0||j>=finishDraft.length)return;
+ [finishDraft[i],finishDraft[j]]=[finishDraft[j],finishDraft[i]];renderFinish();$('finishStatus').textContent='Unsaved edits.';
+});
+$('projectFinish').addEventListener('click',()=>{
+ if(!isHomesteadCup(currentFinishRace())||finishLocked(currentFinishRace()))return;
+ finishDraft=RACE_FIELD.slice().sort((a,b)=>normalizedChance(b)-normalizedChance(a)).map(d=>d.name);
+ $('finishStatus').textContent='Loaded an odds-based starting order (Nov 5 snapshot). Rearrange it to make your prediction, then Save.';
+ renderFinish();
+});
+$('clearFinish').addEventListener('click',()=>{if(finishLocked(currentFinishRace()))return;finishDraft=Array(10).fill('');renderFinish();$('finishStatus').textContent='List cleared locally. Save to update your stored picks.'});
+$('addFinish').addEventListener('click',()=>{if(finishLocked(currentFinishRace()))return;if(finishDraft.length<40){finishDraft.push('');renderFinish()}});
+$('removeFinish').addEventListener('click',()=>{if(finishLocked(currentFinishRace()))return;if(finishDraft.length>1){finishDraft.pop();renderFinish()}});
+$('saveFinish').addEventListener('click',()=>{
+ const r=currentFinishRace();if(finishLocked(r)){$('finishStatus').textContent='Predictions are locked for this race.';return}
+ const values=finishDraft.map(x=>String(x||'').trim()),names=values.filter(Boolean);
+ if(!names.length){$('finishStatus').textContent='Enter at least one driver.';return}
+ if(new Set(names.map(x=>x.toLowerCase())).size!==names.length){$('finishStatus').textContent='The same driver cannot appear twice.';return}
+ if(values.slice(0,names.length).some(x=>!x)){$('finishStatus').textContent='Fill positions in order, without gaps.';return}
+ if(isHomesteadCup(r)&&names.some(n=>!RACE_FIELD.some(d=>d.name.toLowerCase()===n.toLowerCase()))){$('finishStatus').textContent='Select drivers from the verified Homestead Cup field.';return}
+ finishStore[r.id]=names;
+ $('finishStatus').textContent=saveStore(FINISH_KEY,finishStore)?'✓ Saved on this phone. You can revise until the race starts.':'Saved in memory only; browser storage is unavailable.';
+});
+loadFinish();
+const chaseOptions=CHASE_DRIVERS.map(d=>'<option value="'+esc(d.name)+'">#'+d.car+' '+esc(d.name)+'</option>').join('');
+$('calcDriverA').innerHTML=chaseOptions;$('calcDriverB').innerHTML=chaseOptions;
+$('calcDriverA').value='Kyle Larson';$('calcDriverB').value='Christopher Bell';
+for(const id of ['calcFinishA','calcFinishB'])$(id).innerHTML=Array.from({length:40},(_,i)=>'<option value="'+(i+1)+'">'+(i+1)+'</option>').join('');
+$('calcFinishA').value='1';$('calcFinishB').value='2';
+for(const id of ['calcStage1A','calcStage2A','calcStage1B','calcStage2B'])$(id).innerHTML=Array.from({length:11},(_,i)=>'<option value="'+i+'">'+i+'</option>').join('');
+function raceFinishPts(place){return place===1?55:Math.max(1,37-place)}
+function chaseCalc(){
+ const a=driverByName[$('calcDriverA').value],b=driverByName[$('calcDriverB').value],value=id=>Number($(id).value)||0;
+ if(!a||!b||a.name===b.name){$('calcResult').textContent='Select two different drivers.';return}
+ const placeA=value('calcFinishA'),placeB=value('calcFinishB');
+ if(placeA===placeB){$('calcResult').textContent='The two drivers cannot finish in the same position.';return}
+ const scoreA=raceFinishPts(placeA)+value('calcStage1A')+value('calcStage2A')+value('calcBonusA');
+ const scoreB=raceFinishPts(placeB)+value('calcStage1B')+value('calcStage2B')+value('calcBonusB');
+ const totalA=a.points+scoreA,totalB=b.points+scoreB;
+ $('calcResult').innerHTML='<div class="v17-calc-result"><div><b>'+esc(a.name)+'</b><strong>'+totalA.toLocaleString('en-US')+'</strong><small>'+a.points+' + '+scoreA+' hypothetical points</small></div><div><b>'+esc(b.name)+'</b><strong>'+totalB.toLocaleString('en-US')+'</strong><small>'+b.points+' + '+scoreB+' hypothetical points</small></div></div><p class="small">'+(totalA===totalB?'This two-driver simulation is tied.':esc((totalA>totalB?a.name:b.name)+' leads the two-driver comparison by '+Math.abs(totalA-totalB)+' points.'))+' Other drivers, official scoring and tiebreakers may change the championship outcome.</p>';
+}
+document.querySelectorAll('#chaseCalculator select').forEach(s=>s.addEventListener('change',chaseCalc));
+chaseCalc();
+
+/* V1.7 splash / version guide. */
 (function(){
-  const version="1.6";
+  const version="1.7";
   const screen=document.getElementById("welcomeIntro");
   const enter=document.getElementById("enterApp");
   const seenKey="race-command-version-seen";
